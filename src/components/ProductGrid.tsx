@@ -1,0 +1,126 @@
+import React from 'react';
+
+export interface ProductGridItem {
+  imageSrc: string;
+  title?: string;
+  price?: string;
+  href?: string;
+  imageAlt?: string;
+}
+
+export interface ProductGridProps {
+  products: ProductGridItem[];
+  columns?: 2 | 3 | 4;
+  backgroundColor?: string;
+  gap?: string;
+  showText?: boolean;
+  imageBorderRadius?: string;
+}
+
+export const ProductGrid: React.FC<ProductGridProps> = ({
+  products,
+  columns = 2,
+  backgroundColor = '#f9f9fb',
+  gap = '16px',
+  showText = true,
+  imageBorderRadius = '2px',
+}) => {
+  const containerStyle: React.CSSProperties = {
+    background: backgroundColor,
+    backgroundColor: backgroundColor,
+    borderRadius: '6px',
+    padding: '24px',
+    maxWidth: '600px',
+    margin: '0 auto',
+  };
+
+  const gridStyle: React.CSSProperties = {
+    display: 'table',
+    width: '100%',
+    borderCollapse: 'separate',
+    borderSpacing: gap,
+  };
+
+  const rowStyle: React.CSSProperties = {
+    display: 'table-row',
+  };
+
+  const cellStyle: React.CSSProperties = {
+    display: 'table-cell',
+    verticalAlign: 'top',
+    width: `${100 / columns}%`,
+  };
+
+  const imageStyle: React.CSSProperties = {
+    border: 0,
+    borderRadius: imageBorderRadius,
+    display: 'block',
+    outline: 'none',
+    textDecoration: 'none',
+    height: 'auto',
+    width: '100%',
+    fontSize: '13px',
+  };
+
+  const titleStyle: React.CSSProperties = {
+    fontFamily: 'Helvetica, Arial, sans-serif',
+    fontSize: '12px',
+    fontWeight: 400,
+    lineHeight: '18px',
+    textAlign: 'center',
+    color: '#000000',
+    padding: '8px 0 4px',
+    margin: 0,
+  };
+
+  const priceStyle: React.CSSProperties = {
+    fontFamily: 'Helvetica, Arial, sans-serif',
+    fontSize: '14px',
+    fontWeight: 600,
+    lineHeight: '21px',
+    textAlign: 'center',
+    color: '#000000',
+    padding: '0',
+    margin: 0,
+  };
+
+  // Group products into rows
+  const rows: ProductGridItem[][] = [];
+  for (let i = 0; i < products.length; i += columns) {
+    rows.push(products.slice(i, i + columns));
+  }
+
+  return (
+    <div style={containerStyle}>
+      <div style={gridStyle}>
+        {rows.map((row, rowIndex) => (
+          <div key={rowIndex} style={rowStyle}>
+            {row.map((product, colIndex) => (
+              <div key={`${rowIndex}-${colIndex}`} style={cellStyle}>
+                <a href={product.href || '#'} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={product.imageSrc}
+                    alt={product.imageAlt || 'Product'}
+                    style={imageStyle}
+                  />
+                </a>
+                {showText && (
+                  <>
+                    {product.title && <div style={titleStyle}>{product.title}</div>}
+                    {product.price && <div style={priceStyle}>{product.price}</div>}
+                  </>
+                )}
+              </div>
+            ))}
+            {/* Fill empty cells if last row is incomplete */}
+            {row.length < columns &&
+              Array.from({ length: columns - row.length }).map((_, i) => (
+                <div key={`empty-${i}`} style={cellStyle} />
+              ))
+            }
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
