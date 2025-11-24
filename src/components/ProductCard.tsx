@@ -17,6 +17,10 @@ export interface ProductCardProps {
   ctaText?: string;
   ctaBackgroundColor?: string;
   ctaTextColor?: string;
+  ctaBorder?: string;
+  ctaTextTransform?: 'none' | 'uppercase' | 'lowercase' | 'capitalize';
+  ctaLetterSpacing?: string;
+  ctaArrow?: 'none' | 'right' | 'left';
   backgroundColor?: string;
   imagePosition?: 'left' | 'right';
   layout?: 'horizontal' | 'vertical' | 'image-only';
@@ -36,6 +40,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   ctaText = 'Zobacz produkt',
   ctaBackgroundColor = '#6AA306',
   ctaTextColor = '#121212',
+  ctaBorder = 'none',
+  ctaTextTransform = 'none',
+  ctaLetterSpacing,
+  ctaArrow = 'none',
   backgroundColor = '#f9f9fb',
   imagePosition = 'left',
   layout = 'horizontal',
@@ -139,6 +147,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     margin: 0,
   };
 
+  // Add arrow to text
+  const displayCtaText = ctaArrow === 'right' ? `${ctaText} →` : ctaArrow === 'left' ? `← ${ctaText}` : ctaText;
+
   const buttonStyle: React.CSSProperties = {
     display: 'inline-block',
     background: ctaBackgroundColor,
@@ -150,9 +161,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     lineHeight: '19px',
     margin: 0,
     textDecoration: 'none',
+    textTransform: ctaTextTransform as any,
+    letterSpacing: ctaLetterSpacing,
     padding: '6px 16px',
     borderRadius: '4px',
-    border: 'none',
+    border: ctaBorder,
     cursor: 'pointer',
   };
 
@@ -178,7 +191,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       {ctaText && (
         <div style={{ padding: '10px 25px', textAlign: 'center' }}>
           <a href={href} target="_blank" rel="noopener noreferrer" style={buttonStyle}>
-            {ctaText}
+            {displayCtaText}
           </a>
         </div>
       )}

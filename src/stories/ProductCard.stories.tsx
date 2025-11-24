@@ -50,6 +50,8 @@ export const OnSaleWithBadge: Story = {
       ctaText: 'Shop Now',
       ctaBackgroundColor: '#000000',
       ctaTextColor: '#ffffff',
+      ctaTextTransform: 'uppercase',
+      ctaLetterSpacing: '1px',
       layout: 'vertical',
     },
   };
@@ -67,6 +69,9 @@ export const HorizontalLeft: Story = {
     ctaText: 'Discover',
     ctaBackgroundColor: '#000000',
     ctaTextColor: '#ffffff',
+    ctaTextTransform: 'uppercase',
+    ctaLetterSpacing: '1px',
+    ctaArrow: 'right',
     layout: 'horizontal',
     imagePosition: 'left',
   },
@@ -84,6 +89,9 @@ export const HorizontalRight: Story = {
     ctaBackgroundColor: 'transparent',
     ctaTextColor: '#000000',
     ctaBorder: '1px solid #000000',
+    ctaTextTransform: 'uppercase',
+    ctaLetterSpacing: '1px',
+    ctaArrow: 'right',
     layout: 'horizontal',
     imagePosition: 'right',
   },
@@ -102,6 +110,8 @@ export const VerticalFull: Story = {
     ctaText: 'Add to Bag',
     ctaBackgroundColor: '#000000',
     ctaTextColor: '#ffffff',
+    ctaTextTransform: 'uppercase',
+    ctaLetterSpacing: '1px',
     layout: 'vertical',
   },
 };
@@ -113,6 +123,13 @@ export const VerticalMinimal: Story = {
     price: 149.50,
     currency: 'PLN',
     href: 'https://naoko-store.pl/products/szalik-puffy-cloud',
+    ctaText: 'View',
+    ctaBackgroundColor: 'transparent',
+    ctaTextColor: '#000000',
+    ctaBorder: '1px solid #000000',
+    ctaTextTransform: 'uppercase',
+    ctaLetterSpacing: '1px',
+    ctaArrow: 'right',
     layout: 'vertical',
   },
 };
@@ -156,6 +173,8 @@ export const CustomColors: Story = {
     ctaText: 'Shop',
     ctaBackgroundColor: '#000000',
     ctaTextColor: '#ffffff',
+    ctaTextTransform: 'uppercase',
+    ctaLetterSpacing: '1px',
     backgroundColor: '#ffffff',
     layout: 'vertical',
   },
@@ -173,6 +192,9 @@ export const RoundedImage: Story = {
     ctaBackgroundColor: 'transparent',
     ctaTextColor: '#000000',
     ctaBorder: '1px solid #000000',
+    ctaTextTransform: 'uppercase',
+    ctaLetterSpacing: '1px',
+    ctaArrow: 'right',
     layout: 'vertical',
     imageBorderRadius: '12px',
   },
@@ -189,6 +211,8 @@ export const RoundedImageHorizontal: Story = {
     ctaText: 'Shop Now',
     ctaBackgroundColor: '#000000',
     ctaTextColor: '#ffffff',
+    ctaTextTransform: 'uppercase',
+    ctaLetterSpacing: '1px',
     layout: 'horizontal',
     imagePosition: 'left',
     imageBorderRadius: '12px',
@@ -208,6 +232,8 @@ export const FashionVerticalClean: Story = {
     ctaText: 'Shop',
     ctaBackgroundColor: '#000000',
     ctaTextColor: '#ffffff',
+    ctaTextTransform: 'uppercase',
+    ctaLetterSpacing: '1px',
     layout: 'vertical',
   },
 };
@@ -226,6 +252,9 @@ export const FashionHorizontalMinimal: Story = {
     ctaBackgroundColor: 'transparent',
     ctaTextColor: '#000000',
     ctaBorder: '1px solid #000000',
+    ctaTextTransform: 'uppercase',
+    ctaLetterSpacing: '1px',
+    ctaArrow: 'right',
   },
 };
 
@@ -240,6 +269,8 @@ export const FashionVerticalNoDescription: Story = {
     layout: 'vertical',
     ctaBackgroundColor: '#000000',
     ctaTextColor: '#ffffff',
+    ctaTextTransform: 'uppercase',
+    ctaLetterSpacing: '1px',
   },
 };
 
@@ -256,6 +287,8 @@ export const FashionHorizontalRight: Story = {
     imagePosition: 'right',
     ctaBackgroundColor: '#000000',
     ctaTextColor: '#ffffff',
+    ctaTextTransform: 'uppercase',
+    ctaLetterSpacing: '1px',
   },
 };
 
@@ -271,6 +304,8 @@ export const FashionAccessories: Story = {
     layout: 'vertical',
     ctaBackgroundColor: '#000000',
     ctaTextColor: '#ffffff',
+    ctaTextTransform: 'uppercase',
+    ctaLetterSpacing: '1px',
   },
 };
 
@@ -287,6 +322,9 @@ export const FashionWinterCollection: Story = {
     imagePosition: 'left',
     ctaBackgroundColor: '#000000',
     ctaTextColor: '#ffffff',
+    ctaTextTransform: 'uppercase',
+    ctaLetterSpacing: '1px',
+    ctaArrow: 'right',
   },
 };
 
@@ -311,6 +349,8 @@ export const FashionVerticalWithRoundedImage: Story = {
     imageBorderRadius: '8px',
     ctaBackgroundColor: '#000000',
     ctaTextColor: '#ffffff',
+    ctaTextTransform: 'uppercase',
+    ctaLetterSpacing: '1px',
   },
 };
 
@@ -327,6 +367,9 @@ export const FashionMinimalOutlineButton: Story = {
     ctaBackgroundColor: 'transparent',
     ctaTextColor: '#000000',
     ctaBorder: '1px solid #000000',
+    ctaTextTransform: 'uppercase',
+    ctaLetterSpacing: '1px',
+    ctaArrow: 'right',
   },
 };
 
@@ -344,5 +387,8 @@ export const FashionLuxuryProduct: Story = {
     ctaBackgroundColor: 'transparent',
     ctaTextColor: '#000000',
     ctaBorder: '1px solid #000000',
+    ctaTextTransform: 'uppercase',
+    ctaLetterSpacing: '1px',
+    ctaArrow: 'right',
   },
 };
