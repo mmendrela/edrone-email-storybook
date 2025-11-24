@@ -3,7 +3,14 @@ import React from 'react';
 export interface ProductCardProps {
   imageSrc: string;
   title?: string;
-  price?: string;
+  price?: number;
+  salePrice?: number;
+  currency?: string;
+  badge?: {
+    text: string;
+    backgroundColor: string;
+    textColor: string;
+  };
   description?: string;
   href?: string;
   imageAlt?: string;
@@ -20,6 +27,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   imageSrc,
   title,
   price,
+  salePrice,
+  currency = 'zł',
+  badge,
   description,
   href = '#',
   imageAlt = 'Product',
@@ -31,6 +41,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   layout = 'horizontal',
   imageBorderRadius = '2px',
 }) => {
+  const formatPrice = (value: number | string | undefined) => {
+    if (value === undefined || value === null) return '';
+    const numValue = typeof value === 'string' ? parseFloat(value) : value;
+    if (isNaN(numValue)) return '';
+    return `${numValue.toFixed(2).replace('.', ',')} ${currency}`;
+  };
+
   // Common styles
   const containerStyle: React.CSSProperties = {
     background: backgroundColor,
@@ -39,6 +56,26 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     padding: '24px',
     maxWidth: '600px',
     margin: '0 auto',
+    position: 'relative',
+  };
+
+  const imageContainerStyle: React.CSSProperties = {
+    position: 'relative',
+    display: 'inline-block', // To contain the absolute badge
+  };
+  
+  const badgeStyle: React.CSSProperties = {
+    position: 'absolute',
+    top: '10px',
+    left: '10px',
+    padding: '4px 8px',
+    borderRadius: '4px',
+    fontSize: '12px',
+    fontWeight: 'bold',
+    lineHeight: '1',
+    zIndex: 1,
+    color: badge?.textColor,
+    backgroundColor: badge?.backgroundColor,
   };
 
   const imageStyle: React.CSSProperties = {
@@ -63,15 +100,32 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     margin: 0,
   };
 
-  const priceStyle: React.CSSProperties = {
+  const priceContainerStyle: React.CSSProperties = {
     fontFamily: 'Helvetica, Arial, sans-serif',
-    fontSize: '18px',
-    fontWeight: 600,
     lineHeight: '27px',
     textAlign: 'center',
     color: '#000000',
     padding: '0 25px',
     margin: 0,
+  };
+
+  const salePriceStyle: React.CSSProperties = {
+    fontSize: '18px',
+    fontWeight: 600,
+    color: '#e74c3c', // Sale color
+    marginRight: '8px',
+  };
+
+  const originalPriceStyle: React.CSSProperties = {
+    fontSize: '16px',
+    fontWeight: 400,
+    color: '#666666',
+    textDecoration: 'line-through',
+  };
+  
+  const regularPriceStyle: React.CSSProperties = {
+    fontSize: '18px',
+    fontWeight: 600,
   };
 
   const descriptionStyle: React.CSSProperties = {
@@ -106,7 +160,20 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const renderTextContent = () => (
     <>
       {title && <div style={titleStyle}>{title}</div>}
-      {price && <div style={priceStyle}>{price}</div>}
+      
+      {(price || salePrice) && (
+        <div style={priceContainerStyle}>
+          {salePrice ? (
+            <>
+              <span style={salePriceStyle}>{formatPrice(salePrice)}</span>
+              {price && <span style={originalPriceStyle}>{formatPrice(price)}</span>}
+            </>
+          ) : price ? (
+            <span style={regularPriceStyle}>{formatPrice(price)}</span>
+          ) : null}
+        </div>
+      )}
+
       {description && <div style={descriptionStyle}>{description}</div>}
       {ctaText && (
         <div style={{ padding: '10px 25px', textAlign: 'center' }}>
@@ -118,13 +185,21 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     </>
   );
 
+  const renderImageWithBadge = () => (
+    <div style={imageContainerStyle}>
+      {badge && <div style={badgeStyle}>{badge.text}</div>}
+      <a href={href} target="_blank" rel="noopener noreferrer">
+        <img src={imageSrc} alt={imageAlt} style={imageStyle} />
+      </a>
+    </div>
+  );
+
+
   // IMAGE ONLY LAYOUT
   if (layout === 'image-only') {
     return (
       <div style={{ ...containerStyle, padding: 0 }}>
-        <a href={href} target="_blank" rel="noopener noreferrer">
-          <img src={imageSrc} alt={imageAlt} style={imageStyle} />
-        </a>
+        {renderImageWithBadge()}
       </div>
     );
   }
@@ -133,9 +208,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   if (layout === 'vertical') {
     return (
       <div style={containerStyle}>
-        <a href={href} target="_blank" rel="noopener noreferrer">
-          <img src={imageSrc} alt={imageAlt} style={imageStyle} />
-        </a>
+        {renderImageWithBadge()}
         <div style={{ paddingTop: '16px' }}>
           {renderTextContent()}
         </div>
@@ -153,21 +226,21 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     display: 'table-row',
   };
 
-  const imageContainerLeftStyle: React.CSSProperties = {
+  const imageCellLeftStyle: React.CSSProperties = {
     display: 'table-cell',
     width: '50%',
     verticalAlign: 'middle',
     padding: '0 12px 0 0',
   };
 
-  const imageContainerRightStyle: React.CSSProperties = {
+  const imageCellRightStyle: React.CSSProperties = {
     display: 'table-cell',
     width: '50%',
     verticalAlign: 'middle',
     padding: '0 0 0 12px',
   };
 
-  const textContainerLeftStyle: React.CSSProperties = {
+  const textCellLeftStyle: React.CSSProperties = {
     display: 'table-cell',
     width: '50%',
     verticalAlign: 'middle',
@@ -175,7 +248,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     padding: '0 0 0 12px',
   };
 
-  const textContainerRightStyle: React.CSSProperties = {
+  const textCellRightStyle: React.CSSProperties = {
     display: 'table-cell',
     width: '50%',
     verticalAlign: 'middle',
@@ -189,24 +262,20 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <div style={rowStyle}>
           {imagePosition === 'left' ? (
             <>
-              <div style={imageContainerLeftStyle}>
-                <a href={href} target="_blank" rel="noopener noreferrer">
-                  <img src={imageSrc} alt={imageAlt} style={imageStyle} />
-                </a>
+              <div style={imageCellLeftStyle}>
+                {renderImageWithBadge()}
               </div>
-              <div style={textContainerLeftStyle}>
+              <div style={textCellLeftStyle}>
                 {renderTextContent()}
               </div>
             </>
           ) : (
             <>
-              <div style={textContainerRightStyle}>
+              <div style={textCellRightStyle}>
                 {renderTextContent()}
               </div>
-              <div style={imageContainerRightStyle}>
-                <a href={href} target="_blank" rel="noopener noreferrer">
-                  <img src={imageSrc} alt={imageAlt} style={imageStyle} />
-                </a>
+              <div style={imageCellRightStyle}>
+                {renderImageWithBadge()}
               </div>
             </>
           )}

@@ -7,6 +7,7 @@ import { ProductGrid } from '../components/ProductGrid';
 import { BenefitsGrid } from '../components/BenefitsGrid';
 import { Spacer } from '../components/Spacer';
 import { Footer } from '../components/Footer';
+import { DiscountCode } from '../components/DiscountCode';
 
 export const FashionMinimal: React.FC = () => {
   const categories = [
@@ -44,9 +45,9 @@ export const FashionMinimal: React.FC = () => {
   ];
 
   const benefits = [
-    { icon: '✓', title: 'FREE SHIPPING' },
-    { icon: '✓', title: 'EASY RETURNS' },
-    { icon: '✓', title: 'PREMIUM QUALITY' },
+    { icon: 'fas fa-check', title: 'FREE SHIPPING', iconType: 'fontawesome' as const },
+    { icon: 'fas fa-check', title: 'EASY RETURNS', iconType: 'fontawesome' as const },
+    { icon: 'fas fa-check', title: 'PREMIUM QUALITY', iconType: 'fontawesome' as const },
   ];
 
   const footerContent = `
@@ -116,6 +117,24 @@ export const FashionMinimal: React.FC = () => {
       />
 
       <Spacer height="40px" />
+
+      {/* Discount Code */}
+      <DiscountCode
+        code="WELCOME15"
+        title="Twój kod powitalny"
+        description="Na pierwsze zakupy w nowej kolekcji"
+        validUntil="31.12.2024"
+        style="minimal"
+        backgroundColor="#ffffff"
+        borderColor="#000000"
+        codeBackgroundColor="#f5f5f5"
+        codeTextColor="#000000"
+        titleColor="#000000"
+        descriptionColor="#666666"
+        showCopyHint={false}
+      />
+
+      <Spacer height="50px" />
 
       {/* Product Grid */}
       <ProductGrid

@@ -43,17 +43,20 @@ type Story = StoryObj<typeof BenefitsGrid>;
 
 const basicBenefits = [
   {
-    icon: '🚚',
+    icon: 'fas fa-truck-fast',
+    iconType: 'fontawesome' as const,
     title: 'Darmowa dostawa',
     description: 'Przy zamówieniach powyżej 200 zł',
   },
   {
-    icon: '↩️',
+    icon: 'fas fa-rotate-left',
+    iconType: 'fontawesome' as const,
     title: 'Łatwy zwrot',
     description: 'Zwrot do 30 dni bez podania przyczyny',
   },
   {
-    icon: '🔒',
+    icon: 'fas fa-lock',
+    iconType: 'fontawesome' as const,
     title: 'Bezpieczne płatności',
     description: 'Szyfrowane i bezpieczne transakcje',
   },
@@ -61,22 +64,26 @@ const basicBenefits = [
 
 const extendedBenefits = [
   {
-    icon: '🚚',
+    icon: 'fas fa-truck-fast',
+    iconType: 'fontawesome' as const,
     title: 'Free Shipping',
     description: 'On orders over $100',
   },
   {
-    icon: '↩️',
+    icon: 'fas fa-rotate-left',
+    iconType: 'fontawesome' as const,
     title: 'Easy Returns',
     description: '30-day return policy',
   },
   {
-    icon: '🔒',
+    icon: 'fas fa-lock',
+    iconType: 'fontawesome' as const,
     title: 'Secure Payment',
     description: 'Encrypted & safe',
   },
   {
-    icon: '💬',
+    icon: 'fas fa-headset',
+    iconType: 'fontawesome' as const,
     title: '24/7 Support',
     description: 'Always here to help',
   },
@@ -84,37 +91,44 @@ const extendedBenefits = [
 
 const minimalBenefits = [
   {
-    icon: '✓',
+    icon: 'fas fa-check',
+    iconType: 'fontawesome' as const,
     title: 'Free Delivery',
   },
   {
-    icon: '✓',
+    icon: 'fas fa-check',
+    iconType: 'fontawesome' as const,
     title: 'Easy Returns',
   },
   {
-    icon: '✓',
+    icon: 'fas fa-check',
+    iconType: 'fontawesome' as const,
     title: 'Quality Guarantee',
   },
 ];
 
 const fashionBenefits = [
   {
-    icon: '🚚',
+    icon: 'fas fa-truck-fast',
+    iconType: 'fontawesome' as const,
     title: 'FREE WORLDWIDE SHIPPING',
     description: 'Express delivery available',
   },
   {
-    icon: '↩️',
+    icon: 'fas fa-rotate-left',
+    iconType: 'fontawesome' as const,
     title: 'COMPLIMENTARY RETURNS',
     description: 'Free returns within 30 days',
   },
   {
-    icon: '✨',
+    icon: 'fas fa-star',
+    iconType: 'fontawesome' as const,
     title: 'EXCLUSIVE DESIGNS',
     description: 'Limited edition collections',
   },
   {
-    icon: '💎',
+    icon: 'fas fa-gem',
+    iconType: 'fontawesome' as const,
     title: 'PREMIUM QUALITY',
     description: 'Finest materials & craftsmanship',
   },
@@ -172,12 +186,14 @@ export const TwoColumnsDark: Story = {
   args: {
     benefits: [
       {
-        icon: '🚚',
+        icon: 'fas fa-truck-fast',
+        iconType: 'fontawesome' as const,
         title: 'Free Delivery',
         description: 'On all orders',
       },
       {
-        icon: '↩️',
+        icon: 'fas fa-rotate-left',
+        iconType: 'fontawesome' as const,
         title: 'Easy Returns',
         description: '30-day policy',
       },
@@ -208,10 +224,10 @@ export const FourColumns: Story = {
 export const FourColumnsMinimal: Story = {
   args: {
     benefits: [
-      { icon: '✓', title: 'Free Shipping' },
-      { icon: '✓', title: 'Easy Returns' },
-      { icon: '✓', title: 'Secure Payment' },
-      { icon: '✓', title: '24/7 Support' },
+      { icon: 'fas fa-check', iconType: 'fontawesome' as const, title: 'Free Shipping' },
+      { icon: 'fas fa-check', iconType: 'fontawesome' as const, title: 'Easy Returns' },
+      { icon: 'fas fa-check', iconType: 'fontawesome' as const, title: 'Secure Payment' },
+      { icon: 'fas fa-check', iconType: 'fontawesome' as const, title: '24/7 Support' },
     ],
     columns: 4,
     padding: '30px 15px',
@@ -227,9 +243,9 @@ export const FourColumnsMinimal: Story = {
 export const FashionMinimal: Story = {
   args: {
     benefits: [
-      { icon: '✓', title: 'FREE SHIPPING' },
-      { icon: '✓', title: 'EASY RETURNS' },
-      { icon: '✓', title: 'PREMIUM QUALITY' },
+      { icon: 'fas fa-check', iconType: 'fontawesome' as const, title: 'FREE SHIPPING' },
+      { icon: 'fas fa-check', iconType: 'fontawesome' as const, title: 'EASY RETURNS' },
+      { icon: 'fas fa-check', iconType: 'fontawesome' as const, title: 'PREMIUM QUALITY' },
     ],
     columns: 3,
     backgroundColor: '#ffffff',
@@ -287,17 +303,20 @@ export const FashionClean: Story = {
   args: {
     benefits: [
       {
-        icon: '🚚',
+        icon: 'fas fa-truck-fast',
+        iconType: 'fontawesome' as const,
         title: 'FREE WORLDWIDE DELIVERY',
         description: 'On all orders',
       },
       {
-        icon: '↩️',
+        icon: 'fas fa-rotate-left',
+        iconType: 'fontawesome' as const,
         title: 'COMPLIMENTARY RETURNS',
         description: 'Within 30 days',
       },
       {
-        icon: '💎',
+        icon: 'fas fa-gem',
+        iconType: 'fontawesome' as const,
         title: 'PREMIUM QUALITY',
         description: 'Finest materials',
       },
@@ -358,10 +377,10 @@ export const NoDescriptions: Story = {
 export const NoDescriptionsFashion: Story = {
   args: {
     benefits: [
-      { icon: '✓', title: 'FREE DELIVERY' },
-      { icon: '✓', title: 'EASY RETURNS' },
-      { icon: '✓', title: 'SECURE PAYMENT' },
-      { icon: '✓', title: '24/7 SUPPORT' },
+      { icon: 'fas fa-check', iconType: 'fontawesome' as const, title: 'FREE DELIVERY' },
+      { icon: 'fas fa-check', iconType: 'fontawesome' as const, title: 'EASY RETURNS' },
+      { icon: 'fas fa-check', iconType: 'fontawesome' as const, title: 'SECURE PAYMENT' },
+      { icon: 'fas fa-check', iconType: 'fontawesome' as const, title: '24/7 SUPPORT' },
     ],
     columns: 4,
     backgroundColor: '#f5f5f5',
@@ -415,17 +434,20 @@ export const GreenIcons: Story = {
   args: {
     benefits: [
       {
-        icon: '✓',
+        icon: 'fas fa-check',
+        iconType: 'fontawesome' as const,
         title: 'Eco-Friendly Shipping',
         description: 'Carbon neutral delivery',
       },
       {
-        icon: '✓',
+        icon: 'fas fa-check',
+        iconType: 'fontawesome' as const,
         title: 'Sustainable Materials',
         description: 'Ethically sourced',
       },
       {
-        icon: '✓',
+        icon: 'fas fa-check',
+        iconType: 'fontawesome' as const,
         title: 'Recyclable Packaging',
         description: '100% biodegradable',
       },
@@ -459,12 +481,12 @@ export const Compact: Story = {
 export const TwoRows: Story = {
   args: {
     benefits: [
-      { icon: '🚚', title: 'Free Shipping', description: 'On orders over $100' },
-      { icon: '↩️', title: 'Easy Returns', description: '30-day policy' },
-      { icon: '🔒', title: 'Secure Payment', description: 'Encrypted & safe' },
-      { icon: '💬', title: '24/7 Support', description: 'Always here to help' },
-      { icon: '⭐', title: 'Quality Guarantee', description: 'Premium products' },
-      { icon: '🎁', title: 'Gift Wrapping', description: 'Free on request' },
+      { icon: 'fas fa-truck-fast', iconType: 'fontawesome' as const, title: 'Free Shipping', description: 'On orders over $100' },
+      { icon: 'fas fa-rotate-left', iconType: 'fontawesome' as const, title: 'Easy Returns', description: '30-day policy' },
+      { icon: 'fas fa-lock', iconType: 'fontawesome' as const, title: 'Secure Payment', description: 'Encrypted & safe' },
+      { icon: 'fas fa-headset', iconType: 'fontawesome' as const, title: '24/7 Support', description: 'Always here to help' },
+      { icon: 'fas fa-star', iconType: 'fontawesome' as const, title: 'Quality Guarantee', description: 'Premium products' },
+      { icon: 'fas fa-gift', iconType: 'fontawesome' as const, title: 'Gift Wrapping', description: 'Free on request' },
     ],
     columns: 3,
     backgroundColor: '#ffffff',

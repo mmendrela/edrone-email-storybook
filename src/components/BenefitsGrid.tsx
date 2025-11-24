@@ -1,9 +1,10 @@
 import React from 'react';
 
 export interface BenefitItem {
-  icon: string;
+  icon: string; // Font Awesome class (e.g., "fas fa-truck") or emoji
   title: string;
   description?: string;
+  iconType?: 'fontawesome' | 'emoji'; // Specify icon type
 }
 
 export interface BenefitsGridProps {
@@ -61,7 +62,7 @@ export const BenefitsGrid: React.FC<BenefitsGridProps> = ({
     fontSize: iconSize,
     color: iconColor,
     lineHeight: '1',
-    marginBottom: '12px',
+    marginBottom: '16px',
   };
 
   const titleStyle: React.CSSProperties = {
@@ -127,7 +128,11 @@ export const BenefitsGrid: React.FC<BenefitsGridProps> = ({
                                     <tbody>
                                       <tr>
                                         <td align={textAlign} style={iconStyle}>
-                                          {benefit.icon}
+                                          {benefit.iconType === 'fontawesome' ? (
+                                            <i className={benefit.icon} style={{ color: iconColor, fontSize: iconSize }}></i>
+                                          ) : (
+                                            benefit.icon
+                                          )}
                                         </td>
                                       </tr>
                                       <tr>

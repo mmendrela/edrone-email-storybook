@@ -9,6 +9,7 @@ import { ProductGrid } from '../components/ProductGrid';
 import { BenefitsGrid } from '../components/BenefitsGrid';
 import { Spacer } from '../components/Spacer';
 import { Footer } from '../components/Footer';
+import { DiscountCode } from '../components/DiscountCode';
 
 export const FashionSale: React.FC = () => {
   const categories = [
@@ -58,10 +59,10 @@ export const FashionSale: React.FC = () => {
   ];
 
   const benefits = [
-    { icon: '🔥', title: 'UP TO 70% OFF' },
-    { icon: '🚚', title: 'FREE SHIPPING' },
-    { icon: '⏰', title: 'ENDS TONIGHT' },
-    { icon: '🎁', title: 'EXTRA 10% OFF' },
+    { icon: 'fas fa-fire', title: 'UP TO 70% OFF', iconType: 'fontawesome' as const },
+    { icon: 'fas fa-truck-fast', title: 'FREE SHIPPING', iconType: 'fontawesome' as const },
+    { icon: 'fas fa-clock', title: 'ENDS TONIGHT', iconType: 'fontawesome' as const },
+    { icon: 'fas fa-gift', title: 'EXTRA 10% OFF', iconType: 'fontawesome' as const },
   ];
 
   const footerContent = `
@@ -128,6 +129,24 @@ export const FashionSale: React.FC = () => {
         ctaHref="#"
         ctaBackgroundColor="#ffd403"
         ctaTextColor="#000000"
+      />
+
+      <Spacer height="40px" />
+
+      {/* Discount Code */}
+      <DiscountCode
+        code="SAVE30"
+        discountAmount="🔥 -30%"
+        title="EXTRA RABAT NA WYPRZEDAŻ"
+        description="Użyj tego kodu i otrzymaj dodatkowe 30% zniżki na wszystkie produkty wyprzedażowe"
+        validUntil="Dzisiaj, 23:59"
+        style="bold"
+        backgroundColor="#000000"
+        codeBackgroundColor="#ffd403"
+        codeTextColor="#000000"
+        titleColor="#ffd403"
+        descriptionColor="#ffffff"
+        borderColor="#ffd403"
       />
 
       <Spacer height="40px" />

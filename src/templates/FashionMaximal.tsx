@@ -10,6 +10,7 @@ import { BenefitsGrid } from '../components/BenefitsGrid';
 import { Spacer } from '../components/Spacer';
 import { Divider } from '../components/Divider';
 import { Footer } from '../components/Footer';
+import { DiscountCode } from '../components/DiscountCode';
 
 export const FashionMaximal: React.FC = () => {
   const categories = [
@@ -71,24 +72,28 @@ export const FashionMaximal: React.FC = () => {
 
   const benefits = [
     {
-      icon: '🚚',
+      icon: 'fas fa-truck-fast',
       title: 'FREE WORLDWIDE SHIPPING',
       description: 'Express delivery available',
+      iconType: 'fontawesome' as const,
     },
     {
-      icon: '↩️',
+      icon: 'fas fa-rotate-left',
       title: 'COMPLIMENTARY RETURNS',
       description: 'Free returns within 30 days',
+      iconType: 'fontawesome' as const,
     },
     {
-      icon: '✨',
+      icon: 'fas fa-star',
       title: 'EXCLUSIVE DESIGNS',
       description: 'Limited edition collections',
+      iconType: 'fontawesome' as const,
     },
     {
-      icon: '💎',
+      icon: 'fas fa-gem',
       title: 'PREMIUM QUALITY',
       description: 'Finest materials & craftsmanship',
+      iconType: 'fontawesome' as const,
     },
   ];
 
@@ -164,6 +169,19 @@ export const FashionMaximal: React.FC = () => {
         ctaHref="#"
         ctaBackgroundColor="#ffffff"
         ctaTextColor="#000000"
+      />
+
+      <Spacer height="50px" />
+
+      {/* Discount Code */}
+      <DiscountCode
+        code="FLASH30"
+        discountAmount="-30%"
+        title="FLASH SALE 30% ZNIŻKI"
+        description="Tylko dziś! Wprowadź kod przy zakupach i odbierz natychmiastowy rabat na wszystko"
+        validUntil="24.11.2024, 23:59"
+        style="gradient"
+        backgroundColor="#ffffff"
       />
 
       <Spacer height="50px" />

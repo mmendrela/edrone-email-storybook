@@ -8,6 +8,7 @@ import { ProductCard } from '../components/ProductCard';
 import { BenefitsGrid } from '../components/BenefitsGrid';
 import { Spacer } from '../components/Spacer';
 import { Footer } from '../components/Footer';
+import { DiscountCode } from '../components/DiscountCode';
 
 export const FashionLuxury: React.FC = () => {
   const categories = [
@@ -37,19 +38,22 @@ export const FashionLuxury: React.FC = () => {
 
   const benefits = [
     {
-      icon: '🚚',
+      icon: 'fas fa-truck-fast',
       title: 'COMPLIMENTARY SHIPPING',
       description: 'Worldwide express delivery',
+      iconType: 'fontawesome' as const,
     },
     {
-      icon: '💎',
+      icon: 'fas fa-gem',
       title: 'BESPOKE SERVICE',
       description: 'Personal styling available',
+      iconType: 'fontawesome' as const,
     },
     {
-      icon: '✨',
+      icon: 'fas fa-star',
       title: 'EXCLUSIVE ACCESS',
       description: 'Private collections & previews',
+      iconType: 'fontawesome' as const,
     },
   ];
 
@@ -123,6 +127,24 @@ export const FashionLuxury: React.FC = () => {
         ctaHref="#"
         ctaBackgroundColor="transparent"
         ctaTextColor="#000000"
+      />
+
+      <Spacer height="80px" />
+
+      {/* Discount Code */}
+      <DiscountCode
+        code="VIP15"
+        title="Ekskluzywna oferta"
+        description="Dla wybranych klientów - rabat na kolekcję premium"
+        validUntil="31.12.2024"
+        style="outlined"
+        backgroundColor="#ffffff"
+        borderColor="#000000"
+        codeBackgroundColor="#ffffff"
+        codeTextColor="#000000"
+        titleColor="#000000"
+        descriptionColor="#666666"
+        showCopyHint={false}
       />
 
       <Spacer height="80px" />

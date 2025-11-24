@@ -21,11 +21,36 @@ const meta: Meta<typeof ProductCard> = {
       options: ['horizontal', 'vertical', 'image-only'],
     },
     imageBorderRadius: { control: 'text' },
+    price: { control: 'number' },
+    salePrice: { control: 'number' },
+    currency: { control: 'text' },
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof ProductCard>;
+
+
+// ===== E-COMMERCE EXAMPLES =====
+
+export const OnSaleWithBadge: Story = {
+    args: {
+      imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/5645/39937992_864b5a6b32dcac16ed0e54ad304fdea9.jpg',
+      title: 'Lies of P',
+      price: 149.90,
+      salePrice: 109.90,
+      currency: 'zł',
+      badge: {
+        text: '-25%',
+        backgroundColor: '#e74c3c',
+        textColor: '#ffffff',
+      },
+      description: 'Mroczne soulslike w świecie inspirowanym Pinokiem — odkryj intrygi i wybory kształtujące fabułę.',
+      href: 'https://muve.pl/p/lies-of-p-steam-2184244',
+      ctaText: 'Kup w promocji',
+      layout: 'vertical',
+    },
+  };
 
 // ===== HORIZONTAL LAYOUTS =====
 
@@ -33,7 +58,8 @@ export const HorizontalLeft: Story = {
   args: {
     imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/5645/39937992_864b5a6b32dcac16ed0e54ad304fdea9.jpg',
     title: 'Lies of P',
-    price: '109.90 zł',
+    price: 109.90,
+    currency: 'zł',
     description: 'Mroczne soulslike w świecie inspirowanym Pinokiem — odkryj intrygi i wybory kształtujące fabułę.',
     href: 'https://muve.pl/p/lies-of-p-steam-2184244',
     ctaText: 'Zobacz grę',
@@ -46,7 +72,8 @@ export const HorizontalRight: Story = {
   args: {
     imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/5645/171680972_8bb678ff93cfac16cec79b415a3bd8f3.jpg',
     title: 'Dying Light: Definitive 10th Anniversary Edition',
-    price: '142.49 zł',
+    price: 142.49,
+    currency: 'zł',
     description: 'Kultowy survival horror z parkourem, nocnymi zagrożeniami i trybem kooperacji.',
     href: 'https://muve.pl/p/dying-light-definitive-10th-anniversary-edition-3188e8',
     ctaText: 'Kup teraz',
@@ -61,7 +88,8 @@ export const VerticalFull: Story = {
   args: {
     imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/5645/391856_17bc47a1c0426fb2f8fc2008b1b3c1b8.jpg',
     title: 'Nintendo eShop digital code 70 zł',
-    price: '70.00 zł',
+    price: 70.00,
+    currency: 'zł',
     description: 'Kod do eShop na Nintendo Switch — szybki sposób na zakup gier i dodatków.',
     href: 'https://muve.pl/p/nintendo-eshop-digital-code-70-zl-nintendo-223485',
     ctaText: 'Kup kod',
@@ -73,7 +101,8 @@ export const VerticalMinimal: Story = {
   args: {
     imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/5645/356273_b3cbf800a0a5505fac9d8489726b3b38.jpg',
     title: 'Xbox Gift Card',
-    price: '99.99 zł',
+    price: 99.99,
+    currency: 'zł',
     href: '#',
     layout: 'vertical',
   },
@@ -111,7 +140,8 @@ export const CustomColors: Story = {
   args: {
     imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/5645/171680972_8bb678ff93cfac16cec79b415a3bd8f3.jpg',
     title: 'Special Offer',
-    price: '149.99 PLN',
+    price: 149.99,
+    currency: 'PLN',
     description: 'Limited time offer - get this amazing product at a discounted price!',
     href: '#',
     ctaText: 'Get Deal',
@@ -126,7 +156,8 @@ export const RoundedImage: Story = {
   args: {
     imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/5645/39937992_864b5a6b32dcac16ed0e54ad304fdea9.jpg',
     title: 'Lies of P',
-    price: '109.90 zł',
+    price: 109.90,
+    currency: 'zł',
     description: 'Mroczne soulslike w świecie inspirowanym Pinokiem.',
     href: '#',
     ctaText: 'Zobacz grę',
@@ -139,7 +170,8 @@ export const RoundedImageHorizontal: Story = {
   args: {
     imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/5645/171680972_8bb678ff93cfac16cec79b415a3bd8f3.jpg',
     title: 'Dying Light',
-    price: '142.49 zł',
+    price: 142.49,
+    currency: 'zł',
     description: 'Kultowy survival horror z parkourem.',
     href: '#',
     ctaText: 'Kup teraz',
@@ -155,7 +187,8 @@ export const FashionVerticalClean: Story = {
   args: {
     imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/127592/137588898_bbac804c66edc9593c71dc2ce960695e.jpg',
     title: 'SILK MIDI DRESS',
-    price: '899 PLN',
+    price: 899,
+    currency: 'PLN',
     description: 'Elegant silk dress perfect for any occasion',
     href: '#',
     ctaText: 'Shop Now',
@@ -169,7 +202,8 @@ export const FashionHorizontalMinimal: Story = {
   args: {
     imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/127592/137589225_c9d4f58d12cb3dfdfa99cc1cf1dea457.jpg',
     title: 'CASHMERE SWEATER',
-    price: '1,299 PLN',
+    price: 1299,
+    currency: 'PLN',
     description: 'Premium Italian cashmere',
     href: '#',
     ctaText: 'View Details',
@@ -184,7 +218,8 @@ export const FashionVerticalNoDescription: Story = {
   args: {
     imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/127592/166873587_66933bd3f67f78635d838184314dc01c.jpg',
     title: 'TAILORED BLAZER',
-    price: '1,799 PLN',
+    price: 1799,
+    currency: 'PLN',
     href: '#',
     ctaText: 'Discover',
     layout: 'vertical',
@@ -197,7 +232,8 @@ export const FashionHorizontalRight: Story = {
   args: {
     imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/127592/187827374_a8ebb90939e1c7a1bde9e44377c703d7.jpg',
     title: 'LEATHER JACKET',
-    price: '2,499 PLN',
+    price: 2499,
+    currency: 'PLN',
     description: 'Genuine leather, timeless design',
     href: '#',
     ctaText: 'Shop Now',
@@ -212,7 +248,8 @@ export const FashionAccessories: Story = {
   args: {
     imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/6908/118187140_b968c2f9209cdcf612d1eaf753bf6645.jpg',
     title: 'LEATHER HANDBAG',
-    price: '1,599 PLN',
+    price: 1599,
+    currency: 'PLN',
     description: 'Handcrafted Italian leather',
     href: '#',
     ctaText: 'Add to Cart',
@@ -226,7 +263,8 @@ export const FashionMenswear: Story = {
   args: {
     imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/6167/33186674_1378dc77cb852d21f39508f7149fd1de.jpg',
     title: 'SLIM FIT SUIT',
-    price: '2,999 PLN',
+    price: 2999,
+    currency: 'PLN',
     description: 'Wool blend, modern cut',
     href: '#',
     ctaText: 'View Collection',
@@ -249,7 +287,8 @@ export const FashionVerticalWithRoundedImage: Story = {
   args: {
     imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/127592/137588898_bbac804c66edc9593c71dc2ce960695e.jpg',
     title: 'SUMMER DRESS',
-    price: '599 PLN',
+    price: 599,
+    currency: 'PLN',
     description: 'Lightweight linen blend',
     href: '#',
     ctaText: 'Shop',
@@ -264,7 +303,8 @@ export const FashionMinimalOutlineButton: Story = {
   args: {
     imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/6908/3076757_471479f04b60356c5de5e0792d8ef3e1.jpg',
     title: 'DESIGNER SNEAKERS',
-    price: '899 PLN',
+    price: 899,
+    currency: 'PLN',
     description: 'Limited edition',
     href: '#',
     ctaText: 'Explore',
@@ -278,7 +318,8 @@ export const FashionLuxuryProduct: Story = {
   args: {
     imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/127592/166873587_66933bd3f67f78635d838184314dc01c.jpg',
     title: 'EVENING GOWN',
-    price: '4,999 PLN',
+    price: 4999,
+    currency: 'PLN',
     description: 'Exclusive design, made to order',
     href: '#',
     ctaText: 'Contact Us',
