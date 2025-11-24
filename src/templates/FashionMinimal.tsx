@@ -19,27 +19,27 @@ export const FashionMinimal: React.FC = () => {
 
   const products = [
     {
+      imageSrc: 'https://cdn.shopify.com/s/files/1/0586/2509/7894/files/DSC5064_9ec28c74-9885-4554-a03e-d37e731d4be5.jpg?v=1762161083',
+      title: 'SZALIK PUFFY EMERALD',
+      price: '149.50 PLN',
+      href: 'https://naoko-store.pl/products/szalik-puffy-emerald',
+    },
+    {
+      imageSrc: 'https://cdn.shopify.com/s/files/1/0586/2509/7894/files/DSC2415.jpg?v=1761334492',
+      title: 'SZALIK PUFFY CLOUD',
+      price: '149.50 PLN',
+      href: 'https://naoko-store.pl/products/szalik-puffy-cloud',
+    },
+    {
+      imageSrc: 'https://cdn.shopify.com/s/files/1/0586/2509/7894/files/DSC4824_40cff851-41d3-4f94-bd08-bc2b6ae53a18.jpg?v=1762414501',
+      title: 'CZAPKA FLUFFY BUBBLEGUM',
+      price: '127.00 PLN',
+      href: 'https://naoko-store.pl/products/czapka-fluffy-bubblegum',
+    },
+    {
       imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/127592/137588898_bbac804c66edc9593c71dc2ce960695e.jpg',
       title: 'SILK MIDI DRESS',
       price: '899 PLN',
-      href: '#',
-    },
-    {
-      imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/127592/137589225_c9d4f58d12cb3dfdfa99cc1cf1dea457.jpg',
-      title: 'CASHMERE SWEATER',
-      price: '1,299 PLN',
-      href: '#',
-    },
-    {
-      imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/127592/166873587_66933bd3f67f78635d838184314dc01c.jpg',
-      title: 'TAILORED BLAZER',
-      price: '1,799 PLN',
-      href: '#',
-    },
-    {
-      imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/127592/187827374_a8ebb90939e1c7a1bde9e44377c703d7.jpg',
-      title: 'LEATHER JACKET',
-      price: '2,499 PLN',
       href: '#',
     },
   ];

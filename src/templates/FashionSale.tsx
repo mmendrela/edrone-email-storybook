@@ -10,6 +10,7 @@ import { BenefitsGrid } from '../components/BenefitsGrid';
 import { Spacer } from '../components/Spacer';
 import { Footer } from '../components/Footer';
 import { DiscountCode } from '../components/DiscountCode';
+import { CountdownTimer } from '../components/CountdownTimer';
 
 export const FashionSale: React.FC = () => {
   const categories = [
@@ -20,6 +21,24 @@ export const FashionSale: React.FC = () => {
   ];
 
   const products = [
+    {
+      imageSrc: 'https://cdn.shopify.com/s/files/1/0586/2509/7894/files/DSC5064_9ec28c74-9885-4554-a03e-d37e731d4be5.jpg?v=1762161083',
+      title: 'SZALIK PUFFY EMERALD',
+      price: '104.65 PLN',
+      href: 'https://naoko-store.pl/products/szalik-puffy-emerald',
+    },
+    {
+      imageSrc: 'https://cdn.shopify.com/s/files/1/0586/2509/7894/files/DSC2415.jpg?v=1761334492',
+      title: 'SZALIK PUFFY CLOUD',
+      price: '104.65 PLN',
+      href: 'https://naoko-store.pl/products/szalik-puffy-cloud',
+    },
+    {
+      imageSrc: 'https://cdn.shopify.com/s/files/1/0586/2509/7894/files/DSC4824_40cff851-41d3-4f94-bd08-bc2b6ae53a18.jpg?v=1762414501',
+      title: 'CZAPKA FLUFFY BUBBLEGUM',
+      price: '88.90 PLN',
+      href: 'https://naoko-store.pl/products/czapka-fluffy-bubblegum',
+    },
     {
       imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/127592/137588898_bbac804c66edc9593c71dc2ce960695e.jpg',
       title: 'SILK MIDI DRESS',
@@ -36,24 +55,6 @@ export const FashionSale: React.FC = () => {
       imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/127592/166873587_66933bd3f67f78635d838184314dc01c.jpg',
       title: 'TAILORED BLAZER',
       price: '1,259 PLN',
-      href: '#',
-    },
-    {
-      imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/127592/187827374_a8ebb90939e1c7a1bde9e44377c703d7.jpg',
-      title: 'LEATHER JACKET',
-      price: '1,749 PLN',
-      href: '#',
-    },
-    {
-      imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/6908/118187140_b968c2f9209cdcf612d1eaf753bf6645.jpg',
-      title: 'LEATHER HANDBAG',
-      price: '1,119 PLN',
-      href: '#',
-    },
-    {
-      imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/6167/33186674_1378dc77cb852d21f39508f7149fd1de.jpg',
-      title: 'SLIM FIT SUIT',
-      price: '2,099 PLN',
       href: '#',
     },
   ];
@@ -151,18 +152,20 @@ export const FashionSale: React.FC = () => {
 
       <Spacer height="40px" />
 
-      {/* Urgency Message */}
-      <div style={{ backgroundColor: '#000000', padding: '20px 25px' }}>
-        <Text
-          text="⏰ SALE ENDS IN 6 HOURS | DON'T MISS OUT"
-          fontSize="14px"
-          fontWeight="600"
-          color="#ffd403"
-          textAlign="center"
-          textTransform="uppercase"
-          letterSpacing="1.5px"
-        />
-      </div>
+      {/* Countdown Timer */}
+      <CountdownTimer
+        days={0}
+        hours={6}
+        minutes={30}
+        seconds={45}
+        title="⚡ SALE ENDS IN:"
+        subtitle="Don't miss out - shop now!"
+        style="bold"
+        showDays={false}
+        backgroundColor="#000000"
+        titleColor="#ffd403"
+        subtitleColor="#ffffff"
+      />
 
       <Spacer height="40px" />
 

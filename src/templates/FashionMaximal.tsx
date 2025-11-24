@@ -1,6 +1,6 @@
 import React from 'react';
 import { Banner } from '../components/Banner';
-import { Logo } from '../components/Logo';
+import { Header } from '../components/Header';
 import { Categories } from '../components/Categories';
 import { Hero } from '../components/Hero';
 import { Text } from '../components/Text';
@@ -33,6 +33,24 @@ export const FashionMaximal: React.FC = () => {
 
   const gridProducts = [
     {
+      imageSrc: 'https://cdn.shopify.com/s/files/1/0586/2509/7894/files/DSC5064_9ec28c74-9885-4554-a03e-d37e731d4be5.jpg?v=1762161083',
+      title: 'SZALIK PUFFY EMERALD',
+      price: '149.50 PLN',
+      href: 'https://naoko-store.pl/products/szalik-puffy-emerald',
+    },
+    {
+      imageSrc: 'https://cdn.shopify.com/s/files/1/0586/2509/7894/files/DSC2415.jpg?v=1761334492',
+      title: 'SZALIK PUFFY CLOUD',
+      price: '149.50 PLN',
+      href: 'https://naoko-store.pl/products/szalik-puffy-cloud',
+    },
+    {
+      imageSrc: 'https://cdn.shopify.com/s/files/1/0586/2509/7894/files/DSC4824_40cff851-41d3-4f94-bd08-bc2b6ae53a18.jpg?v=1762414501',
+      title: 'CZAPKA FLUFFY BUBBLEGUM',
+      price: '127.00 PLN',
+      href: 'https://naoko-store.pl/products/czapka-fluffy-bubblegum',
+    },
+    {
       imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/127592/137588898_bbac804c66edc9593c71dc2ce960695e.jpg',
       title: 'SILK MIDI DRESS',
       price: '899 PLN',
@@ -48,24 +66,6 @@ export const FashionMaximal: React.FC = () => {
       imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/127592/187827374_a8ebb90939e1c7a1bde9e44377c703d7.jpg',
       title: 'LEATHER JACKET',
       price: '2,499 PLN',
-      href: '#',
-    },
-    {
-      imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/6908/118187140_b968c2f9209cdcf612d1eaf753bf6645.jpg',
-      title: 'LEATHER HANDBAG',
-      price: '1,599 PLN',
-      href: '#',
-    },
-    {
-      imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/6167/33186674_1378dc77cb852d21f39508f7149fd1de.jpg',
-      title: 'SLIM FIT SUIT',
-      price: '2,999 PLN',
-      href: '#',
-    },
-    {
-      imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/6908/3076757_471479f04b60356c5de5e0792d8ef3e1.jpg',
-      title: 'DESIGNER SNEAKERS',
-      price: '899 PLN',
       href: '#',
     },
   ];
@@ -132,13 +132,18 @@ export const FashionMaximal: React.FC = () => {
         letterSpacing="1px"
       />
 
-      {/* Logo */}
-      <Logo
-        src="https://dgk28ckagqims.cloudfront.net/ds-tracker-property-logos/127592_logo.png"
-        alt="NAOKO"
-        href="#"
-        width="140px"
-        padding="35px 25px 25px 25px"
+      {/* Header */}
+      <Header
+        logo={{
+          src: 'https://dgk28ckagqims.cloudfront.net/ds-tracker-property-logos/127592_logo.png',
+          alt: 'NAOKO',
+          href: '#',
+          width: 140,
+        }}
+        preheaderText="Don't miss our Spring Collection 2025 - exclusive designs now available"
+        browserLinkText="View in browser"
+        browserLinkHref="#"
+        backgroundColor="#ffffff"
       />
 
       {/* Categories */}

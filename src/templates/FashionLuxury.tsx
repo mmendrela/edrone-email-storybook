@@ -19,21 +19,21 @@ export const FashionLuxury: React.FC = () => {
   ];
 
   const product1 = {
-    imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/127592/166873587_66933bd3f67f78635d838184314dc01c.jpg',
-    title: 'EVENING GOWN',
-    price: '4,999 PLN',
-    description: 'Exclusive design, made to order',
-    href: '#',
-    ctaText: 'Contact Us',
+    imageSrc: 'https://cdn.shopify.com/s/files/1/0586/2509/7894/files/DSC5064_9ec28c74-9885-4554-a03e-d37e731d4be5.jpg?v=1762161083',
+    title: 'SZALIK PUFFY EMERALD',
+    price: '149.50 PLN',
+    description: 'Elegancki szalik z miękkiej dzianiny',
+    href: 'https://naoko-store.pl/products/szalik-puffy-emerald',
+    ctaText: 'View Details',
   };
 
   const product2 = {
-    imageSrc: 'https://dgk28ckagqims.cloudfront.net/product-images/6167/33186674_1378dc77cb852d21f39508f7149fd1de.jpg',
-    title: 'SLIM FIT SUIT',
-    price: '2,999 PLN',
-    description: 'Wool blend, modern cut',
-    href: '#',
-    ctaText: 'View Details',
+    imageSrc: 'https://cdn.shopify.com/s/files/1/0586/2509/7894/files/DSC2415.jpg?v=1761334492',
+    title: 'SZALIK PUFFY CLOUD',
+    price: '149.50 PLN',
+    description: 'Ciepły i stylowy dodatek na chłodne dni',
+    href: 'https://naoko-store.pl/products/szalik-puffy-cloud',
+    ctaText: 'Discover',
   };
 
   const benefits = [

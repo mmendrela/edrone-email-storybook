@@ -4,7 +4,7 @@ import { Header } from '../components/Header';
 import { LogoProps } from '../components/Logo';
 
 const meta: Meta<typeof Header> = {
-  title: 'Components/Header',
+  title: 'Email Components/Header',
   component: Header,
   tags: ['autodocs'],
   argTypes: {
