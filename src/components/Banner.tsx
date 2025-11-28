@@ -11,6 +11,7 @@ export interface BannerProps {
   textAlign?: 'left' | 'center' | 'right';
   textTransform?: 'none' | 'uppercase' | 'lowercase' | 'capitalize';
   letterSpacing?: string;
+  border?: string;
   closeable?: boolean;
 }
 
@@ -25,12 +26,14 @@ export const Banner: React.FC<BannerProps> = ({
   textAlign = 'center',
   textTransform = 'none',
   letterSpacing,
+  border,
   closeable = false,
 }) => {
   const containerStyle: React.CSSProperties = {
     margin: '0px auto',
     maxWidth: '600px',
     backgroundColor,
+    border,
   };
 
   const textStyle: React.CSSProperties = {
@@ -57,7 +60,7 @@ export const Banner: React.FC<BannerProps> = ({
 
   return (
     <div style={containerStyle}>
-      <table border={0} cellPadding={0} cellSpacing={0} role="presentation" style={{ width: '100%', backgroundColor }}>
+      <table border={0} cellPadding={0} cellSpacing={0} role="presentation" style={{ width: '100%', backgroundColor, border }}>
         <tbody>
           <tr>
             <td style={{ padding }}>

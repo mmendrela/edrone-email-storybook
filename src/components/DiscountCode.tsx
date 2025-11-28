@@ -13,6 +13,8 @@ export interface DiscountCodeProps {
   descriptionColor?: string;
   borderColor?: string;
   style?: 'default' | 'outlined' | 'gradient' | 'minimal' | 'bold';
+  layout?: 'text-only' | 'banner';
+  padding?: string;
   showCopyHint?: boolean;
 }
 
@@ -29,39 +31,83 @@ export const DiscountCode: React.FC<DiscountCodeProps> = ({
   descriptionColor = '#666666',
   borderColor = '#e0e0e0',
   style = 'default',
+  layout = 'banner',
+  padding,
   showCopyHint = true,
 }) => {
+  // Layout-specific styling
+  const getLayoutStyles = () => {
+    switch (layout) {
+      case 'text-only':
+        return {
+          padding: '8px 0',
+          borderRadius: '0px',
+        };
+      case 'banner':
+      default:
+        return {
+          padding: '40px 32px',
+          borderRadius: '8px',
+        };
+    }
+  };
+
+  const layoutStyles = getLayoutStyles();
+
   const containerStyle: React.CSSProperties = {
     backgroundColor: backgroundColor,
-    borderRadius: '8px',
-    padding: '32px 24px',
+    borderRadius: layoutStyles.borderRadius,
+    padding: padding || layoutStyles.padding,
     maxWidth: '600px',
     margin: '0 auto',
     textAlign: 'center',
     fontFamily: 'Helvetica, Arial, sans-serif',
   };
 
+  // Font sizes based on layout
+  const getFontSizes = () => {
+    switch (layout) {
+      case 'text-only':
+        return {
+          title: '16px',
+          description: '13px',
+          code: '18px',
+          codePadding: '8px 16px',
+        };
+      case 'banner':
+      default:
+        return {
+          title: '24px',
+          description: '14px',
+          code: '24px',
+          codePadding: '16px 32px',
+        };
+    }
+  };
+
+  const fontSizes = getFontSizes();
+
   const titleStyle: React.CSSProperties = {
-    fontSize: '24px',
+    fontSize: fontSizes.title,
     fontWeight: 700,
     color: titleColor,
-    margin: '0 0 12px 0',
+    margin: '0 0 6px 0',
     lineHeight: '1.3',
   };
 
   const descriptionStyle: React.CSSProperties = {
-    fontSize: '14px',
+    fontSize: fontSizes.description,
     fontWeight: 400,
     color: descriptionColor,
-    margin: '0 0 20px 0',
+    margin: '0 0 8px 0',
     lineHeight: '1.5',
   };
 
   const discountAmountStyle: React.CSSProperties = {
-    fontSize: '48px',
+    fontSize: layout === 'text-only' ? '32px' : '48px',
     fontWeight: 700,
     color: titleColor,
-    margin: '0 0 16px 0',
+    margin: '0 0 12px 0',
     lineHeight: '1',
   };
 
@@ -69,11 +115,11 @@ export const DiscountCode: React.FC<DiscountCodeProps> = ({
   const getCodeBoxStyle = (): React.CSSProperties => {
     const baseStyle: React.CSSProperties = {
       display: 'inline-block',
-      padding: '16px 32px',
-      margin: '16px 0',
-      fontSize: '24px',
+      padding: fontSizes.codePadding,
+      margin: layout === 'text-only' ? '6px 0' : '8px 0',
+      fontSize: fontSizes.code,
       fontWeight: 700,
-      letterSpacing: '2px',
+      letterSpacing: layout === 'text-only' ? '1px' : '2px',
       color: codeTextColor,
       fontFamily: 'Courier New, monospace',
     };

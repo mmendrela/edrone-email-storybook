@@ -93,7 +93,7 @@ export const Button: React.FC<ButtonProps> = ({
                         <table border={0} cellPadding={0} cellSpacing={0} role="presentation" style={{ borderCollapse: 'separate', lineHeight: '100%', width: fullWidth ? '100%' : 'auto' }}>
                           <tbody>
                             <tr>
-                              <td align="center" role="presentation" style={{ border: borderStyle, borderRadius, cursor: 'auto', padding, background: backgroundColor }}>
+                              <td align="center" role="presentation" style={{ borderRadius, cursor: 'auto', padding: '0', background: 'transparent' }}>
                                 <a href={href} style={buttonStyle} target="_blank" rel="noopener noreferrer">
                                   {displayText}
                                 </a>

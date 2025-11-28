@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { ProductGrid } from '../components/ProductGrid';
+import { FeaturedProductGrid } from '../components/FeaturedProductGrid';
 
 const meta: Meta<typeof ProductGrid> = {
-  title: 'Email Components/ProductGrid',
+  title: 'Email Components/🟢 ProductGrid',
   component: ProductGrid,
   parameters: {
     layout: 'centered',
@@ -22,6 +24,8 @@ const meta: Meta<typeof ProductGrid> = {
 
 export default meta;
 type Story = StoryObj<typeof ProductGrid>;
+
+// ===== READY TO DEVELOP =====
 
 // Naoko store products
 const sampleProducts = [
@@ -66,6 +70,7 @@ const sampleProducts = [
 // ===== 2 COLUMN GRIDS WITH TEXT =====
 
 export const Grid2x1: Story = {
+  name: '🟢 Grid 2x1',
   args: {
     products: sampleProducts.slice(0, 2),
     columns: 2,
@@ -74,6 +79,7 @@ export const Grid2x1: Story = {
 };
 
 export const Grid2x2: Story = {
+  name: '🟢 Grid 2x2',
   args: {
     products: sampleProducts.slice(0, 4),
     columns: 2,
@@ -82,6 +88,7 @@ export const Grid2x2: Story = {
 };
 
 export const Grid2x3: Story = {
+  name: '🟢 Grid 2x3',
   args: {
     products: sampleProducts,
     columns: 2,
@@ -92,6 +99,7 @@ export const Grid2x3: Story = {
 // ===== IMAGE ONLY GRIDS (Fashion/Lookbook) =====
 
 export const ImageGrid2x1: Story = {
+  name: '🟢 Image Grid 2x1',
   args: {
     products: sampleProducts.slice(0, 2),
     columns: 2,
@@ -101,6 +109,7 @@ export const ImageGrid2x1: Story = {
 };
 
 export const ImageGrid2x2: Story = {
+  name: '🟢 Image Grid 2x2',
   args: {
     products: sampleProducts.slice(0, 4),
     columns: 2,
@@ -110,6 +119,7 @@ export const ImageGrid2x2: Story = {
 };
 
 export const ImageGrid2x3: Story = {
+  name: '🟢 Image Grid 2x3',
   args: {
     products: sampleProducts,
     columns: 2,
@@ -118,61 +128,35 @@ export const ImageGrid2x3: Story = {
   },
 };
 
-// ===== CUSTOM STYLING =====
+// ===== FEATURED + GRID =====
 
-export const MinimalGap: Story = {
-  args: {
-    products: sampleProducts.slice(0, 4),
-    columns: 2,
-    showText: true,
-    gap: '4px',
-  },
+export const FeaturedPlusGrid: Story = {
+  name: '🟢 Featured + Grid',
+  render: (args) => (
+    <FeaturedProductGrid
+      featuredProduct={sampleProducts[0]}
+      gridProducts={sampleProducts.slice(1, 5)}
+      columns={2}
+      showText={true}
+      backgroundColor={args.backgroundColor}
+      gap={args.gap}
+      imageBorderRadius={args.imageBorderRadius}
+    />
+  ),
 };
 
-export const LargeGap: Story = {
-  args: {
-    products: sampleProducts.slice(0, 4),
-    columns: 2,
-    showText: true,
-    gap: '32px',
-  },
+export const FeaturedPlusGridImageOnly: Story = {
+  name: '🟢 Featured + Grid (Images Only)',
+  render: (args) => (
+    <FeaturedProductGrid
+      featuredProduct={sampleProducts[0]}
+      gridProducts={sampleProducts.slice(1, 5)}
+      columns={2}
+      showText={false}
+      backgroundColor={args.backgroundColor}
+      gap={args.gap || '12px'}
+      imageBorderRadius={args.imageBorderRadius}
+    />
+  ),
 };
 
-export const WhiteBackground: Story = {
-  args: {
-    products: sampleProducts.slice(0, 4),
-    columns: 2,
-    showText: true,
-    backgroundColor: '#ffffff',
-  },
-};
-
-export const CompactNoText: Story = {
-  args: {
-    products: sampleProducts.slice(0, 4),
-    columns: 2,
-    showText: false,
-    gap: '8px',
-  },
-};
-
-// ===== ROUNDED IMAGES =====
-
-export const RoundedImagesWithText: Story = {
-  args: {
-    products: sampleProducts.slice(0, 4),
-    columns: 2,
-    showText: true,
-    imageBorderRadius: '12px',
-  },
-};
-
-export const RoundedImagesNoText: Story = {
-  args: {
-    products: sampleProducts.slice(0, 4),
-    columns: 2,
-    showText: false,
-    gap: '12px',
-    imageBorderRadius: '12px',
-  },
-};

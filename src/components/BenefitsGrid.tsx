@@ -28,6 +28,9 @@ export interface BenefitsGridProps {
   border?: string;
   titleTextTransform?: 'none' | 'uppercase' | 'lowercase' | 'capitalize';
   titleLetterSpacing?: string;
+  iconCircle?: boolean;
+  iconCircleSize?: string;
+  iconCircleBackgroundColor?: string;
 }
 
 export const BenefitsGrid: React.FC<BenefitsGridProps> = ({
@@ -51,6 +54,9 @@ export const BenefitsGrid: React.FC<BenefitsGridProps> = ({
   border,
   titleTextTransform = 'none',
   titleLetterSpacing = '0px',
+  iconCircle = false,
+  iconCircleSize = '60px',
+  iconCircleBackgroundColor = '#f5f5f5',
 }) => {
   const containerStyle: React.CSSProperties = {
     margin: '0px auto',
@@ -62,7 +68,9 @@ export const BenefitsGrid: React.FC<BenefitsGridProps> = ({
     fontSize: iconSize,
     color: iconColor,
     lineHeight: '1',
-    marginBottom: '16px',
+    marginBottom: '0',
+    fontWeight: '300',
+    paddingBottom: '12px',
   };
 
   const titleStyle: React.CSSProperties = {
@@ -126,15 +134,35 @@ export const BenefitsGrid: React.FC<BenefitsGridProps> = ({
                                 <td style={itemStyle}>
                                   <table border={0} cellPadding={0} cellSpacing={0} role="presentation" style={{ width: '100%' }}>
                                     <tbody>
-                                      <tr>
-                                        <td align={textAlign} style={iconStyle}>
-                                          {benefit.iconType === 'fontawesome' ? (
-                                            <i className={benefit.icon} style={{ color: iconColor, fontSize: iconSize }}></i>
-                                          ) : (
-                                            benefit.icon
-                                          )}
-                                        </td>
-                                      </tr>
+                                      {benefit.icon && (
+                                        <tr>
+                                          <td align={textAlign} style={{ ...iconStyle, paddingBottom: '12px' }}>
+                                            {iconCircle ? (
+                                              <div style={{
+                                                display: 'inline-flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                width: iconCircleSize,
+                                                height: iconCircleSize,
+                                                borderRadius: '50%',
+                                                backgroundColor: iconCircleBackgroundColor,
+                                              }}>
+                                                {benefit.iconType === 'fontawesome' ? (
+                                                  <i className={benefit.icon} style={{ color: iconColor, fontSize: iconSize }}></i>
+                                                ) : (
+                                                  benefit.icon
+                                                )}
+                                              </div>
+                                            ) : (
+                                              benefit.iconType === 'fontawesome' ? (
+                                                <i className={benefit.icon} style={{ color: iconColor, fontSize: iconSize }}></i>
+                                              ) : (
+                                                benefit.icon
+                                              )
+                                            )}
+                                          </td>
+                                        </tr>
+                                      )}
                                       <tr>
                                         <td align={textAlign} style={titleStyle}>
                                           {benefit.title}

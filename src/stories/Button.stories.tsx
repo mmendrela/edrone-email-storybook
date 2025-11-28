@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../components/Button';
 
 const meta: Meta<typeof Button> = {
-  title: 'Email Components/Button',
+  title: 'Email Components/🟢 Button',
   component: Button,
   parameters: {
     layout: 'centered',
@@ -40,141 +40,123 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
+// ===== READY TO DEVELOP =====
+
+// ===== BIG SIZE =====
+
+export const BigSolidNoIconSharp: Story = {
+  name: '🟢 Big - Solid - No Icon - Sharp',
   args: {
     text: 'Shop Now',
     href: '#',
-    backgroundColor: '#3498db',
+    backgroundColor: '#000000',
     color: '#ffffff',
-    padding: '10px 25px',
-    borderRadius: '4px',
+    padding: '16px 40px',
+    borderRadius: '0px',
     fontSize: '15px',
     fontWeight: '600',
     align: 'center',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
   },
 };
 
-export const Success: Story = {
+export const BigSolidIconSharp: Story = {
+  name: '🟢 Big - Solid - Icon - Sharp',
   args: {
-    ...Primary.args,
-    text: 'Confirm Order',
-    backgroundColor: '#2ecc71',
-  },
-};
-
-export const Danger: Story = {
-  args: {
-    ...Primary.args,
-    text: 'Cancel',
-    backgroundColor: '#e74c3c',
-  },
-};
-
-export const Dark: Story = {
-  args: {
-    ...Primary.args,
-    text: 'View Collection',
-    backgroundColor: '#2c3e50',
-  },
-};
-
-export const LeftAligned: Story = {
-  args: {
-    ...Primary.args,
-    align: 'left',
-  },
-};
-
-export const RightAligned: Story = {
-  args: {
-    ...Primary.args,
-    align: 'right',
-  },
-};
-
-export const Rounded: Story = {
-  args: {
-    ...Primary.args,
-    borderRadius: '25px',
-  },
-};
-
-export const Medium: Story = {
-  args: {
-    ...Primary.args,
-    padding: '10px 25px',
+    text: 'Shop Now',
+    href: '#',
+    backgroundColor: '#000000',
+    color: '#ffffff',
+    padding: '16px 40px',
+    borderRadius: '0px',
     fontSize: '15px',
+    fontWeight: '600',
+    align: 'center',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
+    arrow: 'right',
   },
 };
 
-export const Small: Story = {
+export const BigStrokeNoIconSharp: Story = {
+  name: '🟢 Big - Stroke - No Icon - Sharp',
   args: {
-    ...Primary.args,
-    padding: '8px 20px',
-    fontSize: '14px',
-  },
-};
-
-// ===== FASHION/MINIMALIST STYLES =====
-
-export const OutlineBlack: Story = {
-  args: {
-    text: 'Shop Collection',
+    text: 'Shop Now',
     href: '#',
     backgroundColor: 'transparent',
     color: '#000000',
     borderColor: '#000000',
-    borderWidth: '1px',
-    padding: '12px 30px',
+    borderWidth: '2px',
+    padding: '16px 40px',
     borderRadius: '0px',
-    fontSize: '13px',
-    fontWeight: '500',
+    fontSize: '15px',
+    fontWeight: '600',
+    align: 'center',
     textTransform: 'uppercase',
-    letterSpacing: '1.5px',
+    letterSpacing: '1px',
   },
 };
 
-export const OutlineWhite: Story = {
+export const BigStrokeIconSharp: Story = {
+  name: '🟢 Big - Stroke - Icon - Sharp',
   args: {
-    ...OutlineBlack.args,
-    text: 'Discover More',
-    backgroundColor: 'transparent',
-    color: '#ffffff',
-    borderColor: '#ffffff',
-  },
-};
-
-export const MinimalistUppercase: Story = {
-  args: {
-    text: 'View Details',
+    text: 'Shop Now',
     href: '#',
-    backgroundColor: '#000000',
-    color: '#ffffff',
-    padding: '14px 35px',
+    backgroundColor: 'transparent',
+    color: '#000000',
+    borderColor: '#000000',
+    borderWidth: '2px',
+    padding: '16px 40px',
     borderRadius: '0px',
-    fontSize: '12px',
-    fontWeight: '500',
+    fontSize: '15px',
+    fontWeight: '600',
+    align: 'center',
     textTransform: 'uppercase',
-    letterSpacing: '2px',
+    letterSpacing: '1px',
+    arrow: 'right',
   },
 };
 
-export const UnderlineLink: Story = {
+export const BigTextNoIconSharp: Story = {
+  name: '🟢 Big - Text - No Icon - Sharp',
   args: {
-    text: 'Explore Collection',
+    text: 'Shop Now',
     href: '#',
     backgroundColor: 'transparent',
     color: '#000000',
     padding: '8px 0px',
     borderRadius: '0px',
-    fontSize: '14px',
+    fontSize: '15px',
     fontWeight: '400',
+    align: 'center',
     textDecoration: 'underline',
     border: 'none',
   },
 };
 
-export const ArrowRight: Story = {
+export const BigTextIconSharp: Story = {
+  name: '🟢 Big - Text - Icon - Sharp',
+  args: {
+    text: 'Shop Now',
+    href: '#',
+    backgroundColor: 'transparent',
+    color: '#000000',
+    padding: '8px 0px',
+    borderRadius: '0px',
+    fontSize: '15px',
+    fontWeight: '400',
+    align: 'center',
+    textDecoration: 'underline',
+    border: 'none',
+    arrow: 'right',
+  },
+};
+
+// ===== SMALL SIZE =====
+
+export const SmallSolidNoIconSharp: Story = {
+  name: '🟢 Small - Solid - No Icon - Sharp',
   args: {
     text: 'Shop Now',
     href: '#',
@@ -183,148 +165,249 @@ export const ArrowRight: Story = {
     padding: '12px 28px',
     borderRadius: '0px',
     fontSize: '13px',
-    fontWeight: '500',
+    fontWeight: '600',
+    align: 'center',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
+  },
+};
+
+export const SmallSolidIconSharp: Story = {
+  name: '🟢 Small - Solid - Icon - Sharp',
+  args: {
+    text: 'Shop Now',
+    href: '#',
+    backgroundColor: '#000000',
+    color: '#ffffff',
+    padding: '12px 28px',
+    borderRadius: '0px',
+    fontSize: '13px',
+    fontWeight: '600',
+    align: 'center',
     textTransform: 'uppercase',
     letterSpacing: '1px',
     arrow: 'right',
   },
 };
 
-export const ArrowRightOutline: Story = {
+export const SmallStrokeNoIconSharp: Story = {
+  name: '🟢 Small - Stroke - No Icon - Sharp',
   args: {
-    text: 'Discover',
+    text: 'Shop Now',
     href: '#',
     backgroundColor: 'transparent',
     color: '#000000',
     borderColor: '#000000',
-    borderWidth: '1px',
+    borderWidth: '2px',
     padding: '12px 28px',
     borderRadius: '0px',
     fontSize: '13px',
-    fontWeight: '400',
-    arrow: 'right',
-  },
-};
-
-export const PillShaped: Story = {
-  args: {
-    text: 'Add to Cart',
-    href: '#',
-    backgroundColor: '#000000',
-    color: '#ffffff',
-    padding: '12px 32px',
-    borderRadius: '30px',
-    fontSize: '14px',
-    fontWeight: '500',
-  },
-};
-
-export const PillOutline: Story = {
-  args: {
-    text: 'Learn More',
-    href: '#',
-    backgroundColor: 'transparent',
-    color: '#000000',
-    borderColor: '#000000',
-    borderWidth: '1px',
-    padding: '12px 32px',
-    borderRadius: '30px',
-    fontSize: '14px',
-    fontWeight: '400',
-  },
-};
-
-export const ThinBorder: Story = {
-  args: {
-    text: 'CONTINUE SHOPPING',
-    href: '#',
-    backgroundColor: 'transparent',
-    color: '#000000',
-    borderColor: '#000000',
-    borderWidth: '0.5px',
-    padding: '14px 40px',
-    borderRadius: '0px',
-    fontSize: '11px',
-    fontWeight: '400',
-    textTransform: 'uppercase',
-    letterSpacing: '2.5px',
-  },
-};
-
-export const MinimalGray: Story = {
-  args: {
-    text: 'View All',
-    href: '#',
-    backgroundColor: '#f5f5f5',
-    color: '#000000',
-    padding: '12px 28px',
-    borderRadius: '2px',
-    fontSize: '13px',
-    fontWeight: '500',
+    fontWeight: '600',
+    align: 'center',
     textTransform: 'uppercase',
     letterSpacing: '1px',
   },
 };
 
-export const FashionPrimary: Story = {
+export const SmallStrokeIconSharp: Story = {
+  name: '🟢 Small - Stroke - Icon - Sharp',
   args: {
-    text: 'Shop Women',
-    href: '#',
-    backgroundColor: '#000000',
-    color: '#ffffff',
-    padding: '14px 36px',
-    borderRadius: '0px',
-    fontSize: '12px',
-    fontWeight: '600',
-    textTransform: 'uppercase',
-    letterSpacing: '2px',
-  },
-};
-
-export const FashionSecondary: Story = {
-  args: {
-    text: 'Shop Men',
+    text: 'Shop Now',
     href: '#',
     backgroundColor: 'transparent',
     color: '#000000',
     borderColor: '#000000',
-    borderWidth: '1px',
-    padding: '14px 36px',
+    borderWidth: '2px',
+    padding: '12px 28px',
     borderRadius: '0px',
-    fontSize: '12px',
+    fontSize: '13px',
     fontWeight: '600',
+    align: 'center',
     textTransform: 'uppercase',
-    letterSpacing: '2px',
+    letterSpacing: '1px',
+    arrow: 'right',
   },
 };
 
-export const FullWidthBlack: Story = {
+export const SmallTextNoIconSharp: Story = {
+  name: '🟢 Small - Text - No Icon - Sharp',
   args: {
-    text: 'Complete Purchase',
-    href: '#',
-    backgroundColor: '#000000',
-    color: '#ffffff',
-    padding: '16px 0px',
-    borderRadius: '0px',
-    fontSize: '14px',
-    fontWeight: '500',
-    textTransform: 'uppercase',
-    letterSpacing: '1.5px',
-    fullWidth: true,
-  },
-};
-
-export const SubtleLink: Story = {
-  args: {
-    text: 'View size guide',
+    text: 'Shop Now',
     href: '#',
     backgroundColor: 'transparent',
-    color: '#666666',
+    color: '#000000',
     padding: '6px 0px',
     borderRadius: '0px',
     fontSize: '13px',
     fontWeight: '400',
+    align: 'center',
     textDecoration: 'underline',
     border: 'none',
+  },
+};
+
+export const SmallTextIconSharp: Story = {
+  name: '🟢 Small - Text - Icon - Sharp',
+  args: {
+    text: 'Shop Now',
+    href: '#',
+    backgroundColor: 'transparent',
+    color: '#000000',
+    padding: '6px 0px',
+    borderRadius: '0px',
+    fontSize: '13px',
+    fontWeight: '400',
+    align: 'center',
+    textDecoration: 'underline',
+    border: 'none',
+    arrow: 'right',
+  },
+};
+
+// ===== ROUNDED CORNERS =====
+
+export const BigSolidNoIconRounded: Story = {
+  name: '🟢 Big - Solid - No Icon - Rounded',
+  args: {
+    text: 'Shop Now',
+    href: '#',
+    backgroundColor: '#000000',
+    color: '#ffffff',
+    padding: '16px 40px',
+    borderRadius: '6px',
+    fontSize: '15px',
+    fontWeight: '600',
+    align: 'center',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
+  },
+};
+
+export const SmallSolidNoIconRounded: Story = {
+  name: '🟢 Small - Solid - No Icon - Rounded',
+  args: {
+    text: 'Shop Now',
+    href: '#',
+    backgroundColor: '#000000',
+    color: '#ffffff',
+    padding: '12px 28px',
+    borderRadius: '6px',
+    fontSize: '13px',
+    fontWeight: '600',
+    align: 'center',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
+  },
+};
+
+// ===== GHOST (LIGHT BACKGROUND) =====
+
+export const BigGhostNoIconSharp: Story = {
+  name: '🟢 Big - Ghost - No Icon - Sharp',
+  args: {
+    text: 'Shop Now',
+    href: '#',
+    backgroundColor: '#f5f5f5',
+    color: '#000000',
+    padding: '16px 40px',
+    borderRadius: '0px',
+    fontSize: '15px',
+    fontWeight: '600',
+    align: 'center',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
+    border: 'none',
+  },
+};
+
+export const BigGhostIconSharp: Story = {
+  name: '🟢 Big - Ghost - Icon - Sharp',
+  args: {
+    text: 'Shop Now',
+    href: '#',
+    backgroundColor: '#f5f5f5',
+    color: '#000000',
+    padding: '16px 40px',
+    borderRadius: '0px',
+    fontSize: '15px',
+    fontWeight: '600',
+    align: 'center',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
+    border: 'none',
+    arrow: 'right',
+  },
+};
+
+export const SmallGhostNoIconSharp: Story = {
+  name: '🟢 Small - Ghost - No Icon - Sharp',
+  args: {
+    text: 'Shop Now',
+    href: '#',
+    backgroundColor: '#f5f5f5',
+    color: '#000000',
+    padding: '12px 28px',
+    borderRadius: '0px',
+    fontSize: '13px',
+    fontWeight: '600',
+    align: 'center',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
+    border: 'none',
+  },
+};
+
+export const SmallGhostIconSharp: Story = {
+  name: '🟢 Small - Ghost - Icon - Sharp',
+  args: {
+    text: 'Shop Now',
+    href: '#',
+    backgroundColor: '#f5f5f5',
+    color: '#000000',
+    padding: '12px 28px',
+    borderRadius: '0px',
+    fontSize: '13px',
+    fontWeight: '600',
+    align: 'center',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
+    border: 'none',
+    arrow: 'right',
+  },
+};
+
+// ===== PILL SHAPE =====
+
+export const BigSolidNoIconPill: Story = {
+  name: '🟢 Big - Solid - No Icon - Pill',
+  args: {
+    text: 'Shop Now',
+    href: '#',
+    backgroundColor: '#000000',
+    color: '#ffffff',
+    padding: '16px 40px',
+    borderRadius: '30px',
+    fontSize: '15px',
+    fontWeight: '600',
+    align: 'center',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
+  },
+};
+
+export const SmallSolidNoIconPill: Story = {
+  name: '🟢 Small - Solid - No Icon - Pill',
+  args: {
+    text: 'Shop Now',
+    href: '#',
+    backgroundColor: '#000000',
+    color: '#ffffff',
+    padding: '12px 28px',
+    borderRadius: '30px',
+    fontSize: '13px',
+    fontWeight: '600',
+    align: 'center',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
   },
 };
