@@ -1,11 +1,20 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Text } from '../components/Text';
+import { Button } from '../components/Button';
 
 const meta: Meta<typeof Text> = {
-  title: 'Email Components/Text',
+  title: 'Email Components/🟢 Text',
   component: Text,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#f5f5f5' },
+        { name: 'white', value: '#ffffff' },
+      ],
+    },
   },
   tags: ['autodocs'],
   argTypes: {
@@ -24,73 +33,71 @@ const meta: Meta<typeof Text> = {
 export default meta;
 type Story = StoryObj<typeof Text>;
 
-export const DefaultText: Story = {
-  args: {
-    content: 'This is a sample text component for email templates.',
-    align: 'left',
-    padding: '10px 25px',
-    fontSize: '14px',
-    fontWeight: '400',
-    color: '#000000',
-    backgroundColor: '#fff',
-  },
-};
+// ===== READY TO DEVELOP =====
 
-export const Heading: Story = {
+export const JustHeader: Story = {
+  name: '🟢 Just Header',
   args: {
-    content: '<strong>Important Announcement</strong>',
+    content: '<h2 style="margin: 0; font-size: 28px; font-weight: 700; color: #000000;">Odkryj nową kolekcję</h2>',
     align: 'center',
-    fontSize: '24px',
-    fontWeight: '700',
-    color: '#2c3e50',
     padding: '20px 25px',
+    backgroundColor: '#ffffff',
   },
 };
 
-export const CenteredText: Story = {
+export const JustBodyText: Story = {
+  name: '🟢 Just Body Text',
   args: {
-    content: 'This text is centered and perfect for announcements or highlights.',
+    content: '<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #666666;">Cieszymy się, że jesteś z nami! Sprawdź nasze najnowsze produkty i skorzystaj z ekskluzywnych ofert dostępnych tylko dla naszych klientów. Zapraszamy do zakupów.</p>',
     align: 'center',
-    padding: '15px 25px',
-    fontSize: '16px',
-  },
-};
-
-export const RightAligned: Story = {
-  args: {
-    content: 'Right-aligned text can be useful for dates or signatures.',
-    align: 'right',
-    padding: '10px 25px',
-    fontSize: '14px',
-    color: '#7f8c8d',
-  },
-};
-
-export const WithHTMLContent: Story = {
-  args: {
-    content: '<p>This is a paragraph with <strong>bold text</strong> and <em>italic text</em>.</p><p>You can include multiple paragraphs and <a href="#" style="color: #3498db;">links</a>.</p>',
-    align: 'left',
-    padding: '15px 25px',
-    fontSize: '14px',
-  },
-};
-
-export const LargeText: Story = {
-  args: {
-    content: 'Large text for emphasis',
-    align: 'center',
-    fontSize: '20px',
-    fontWeight: '600',
     padding: '20px 25px',
+    backgroundColor: '#ffffff',
   },
 };
 
-export const SmallText: Story = {
+export const HeaderPlusText: Story = {
+  name: '🟢 Header + Text',
   args: {
-    content: 'Small text for disclaimers or fine print',
-    align: 'left',
-    fontSize: '12px',
-    color: '#95a5a6',
+    content: '<h2 style="margin: 0 0 12px 0; font-size: 24px; font-weight: 700; color: #000000;">Witamy w naszym sklepie</h2><p style="margin: 0; font-size: 16px; line-height: 1.6; color: #666666;">Cieszymy się, że jesteś z nami! Sprawdź nasze najnowsze produkty i skorzystaj z ekskluzywnych ofert dostępnych tylko dla naszych klientów.</p>',
+    align: 'center',
+    padding: '20px 25px',
+    backgroundColor: '#ffffff',
+  },
+};
+
+export const HeaderTextButton: Story = {
+  name: '🟢 Header + Text + Button',
+  render: () => (
+    <div style={{ backgroundColor: '#ffffff', maxWidth: '600px', margin: '0 auto', padding: '20px 0' }}>
+      <Text
+        content='<h2 style="margin: 0 0 12px 0; font-size: 24px; font-weight: 700; color: #000000;">Specjalna oferta tylko dzisiaj</h2><p style="margin: 0; font-size: 16px; line-height: 1.6; color: #666666;">Nie przegap okazji! Rabat 20% na wszystkie produkty. Oferta ważna tylko przez 24 godziny.</p>'
+        align="center"
+        padding="0 25px 20px 25px"
+        backgroundColor="transparent"
+      />
+      <Button
+        text="Kup teraz"
+        href="#"
+        backgroundColor="#3498db"
+        color="#ffffff"
+        padding="12px 32px"
+        borderRadius="4px"
+        fontSize="16px"
+        fontWeight="600"
+        align="center"
+      />
+    </div>
+  ),
+};
+
+export const SmallAnnotation: Story = {
+  name: '🟢 Small Annotation',
+  args: {
+    content: '* Oferta ważna do 31.12.2024. Szczegóły regulaminu dostępne na stronie sklepu.',
+    align: 'center',
     padding: '10px 25px',
+    fontSize: '11px',
+    color: '#999999',
+    backgroundColor: '#ffffff',
   },
 };

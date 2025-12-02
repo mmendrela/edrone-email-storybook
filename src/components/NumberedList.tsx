@@ -13,6 +13,11 @@ export interface NumberedListProps {
   titleColor?: string;
   descriptionColor?: string;
   padding?: string;
+  numberSize?: string;
+  numberFontSize?: string;
+  numberFontWeight?: number | string;
+  numberBorderRadius?: string;
+  numberBorder?: string;
 }
 
 export const NumberedList: React.FC<NumberedListProps> = ({
@@ -23,6 +28,11 @@ export const NumberedList: React.FC<NumberedListProps> = ({
   titleColor = '#000000',
   descriptionColor = '#666666',
   padding = '24px',
+  numberSize = '32px',
+  numberFontSize = '16px',
+  numberFontWeight = 400,
+  numberBorderRadius = '9999px',
+  numberBorder,
 }) => {
   const containerStyle: React.CSSProperties = {
     background: backgroundColor,
@@ -35,16 +45,17 @@ export const NumberedList: React.FC<NumberedListProps> = ({
 
   const bulletStyle: React.CSSProperties = {
     display: 'inline-block',
-    width: '32px',
-    height: '32px',
-    lineHeight: '32px',
-    borderRadius: '9999px',
+    width: numberSize,
+    height: numberSize,
+    lineHeight: numberSize,
+    borderRadius: numberBorderRadius,
     backgroundColor: numberBackgroundColor,
     color: numberTextColor,
-    fontWeight: 400,
-    fontSize: '16px',
+    fontWeight: numberFontWeight,
+    fontSize: numberFontSize,
     textAlign: 'center',
     fontFamily: 'Helvetica, Arial, sans-serif',
+    ...(numberBorder && { border: numberBorder }),
   };
 
   const titleStyle: React.CSSProperties = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Banner } from '../components/Banner';
-import { Logo } from '../components/Logo';
+import { Header } from '../components/Header';
 import { Categories } from '../components/Categories';
 import { Hero } from '../components/Hero';
 import { Text } from '../components/Text';
@@ -94,12 +94,14 @@ export const FashionSale: React.FC = () => {
       />
 
       {/* Logo */}
-      <Logo
-        src="https://dgk28ckagqims.cloudfront.net/ds-tracker-property-logos/127592_logo.png"
-        alt="NAOKO"
-        href="#"
-        width="130px"
-        padding="30px 25px 20px 25px"
+      <Header
+        logo={{
+          src: "https://dgk28ckagqims.cloudfront.net/ds-tracker-property-logos/127592_logo.png",
+          alt: "NAOKO",
+          href: "#",
+          width: 130,
+        }}
+        backgroundColor="#ffffff"
       />
 
       {/* Categories */}

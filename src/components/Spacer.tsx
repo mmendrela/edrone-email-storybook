@@ -3,16 +3,19 @@ import React from 'react';
 export interface SpacerProps {
   height?: string;
   backgroundColor?: string;
+  showBorder?: boolean;
 }
 
 export const Spacer: React.FC<SpacerProps> = ({
   height = '20px',
-  backgroundColor = '#fff',
+  backgroundColor = 'transparent',
+  showBorder = false,
 }) => {
   const containerStyle: React.CSSProperties = {
     margin: '0px auto',
     maxWidth: '600px',
     backgroundColor,
+    ...(showBorder && { border: '1px dashed #cccccc' }),
   };
 
   return (

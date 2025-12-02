@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FashionMinimal } from '../templates/FashionMinimal';
-import { FashionMaximal } from '../templates/FashionMaximal';
-import { FashionLuxury } from '../templates/FashionLuxury';
-import { FashionSale } from '../templates/FashionSale';
+import { PromotionalSale } from '../templates/PromotionalSale';
+import { NewsletterTips } from '../templates/NewsletterTips';
+import { SimpleAnnouncement } from '../templates/SimpleAnnouncement';
 
 const meta: Meta = {
   title: 'Email Templates/Complete Examples',
@@ -10,7 +9,7 @@ const meta: Meta = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Complete email templates combining multiple components. These are full examples ready to use for different fashion brand styles and purposes.',
+        component: 'Complete email templates combining multiple components. These are full examples ready to use for different purposes.',
       },
     },
   },
@@ -19,53 +18,40 @@ const meta: Meta = {
 
 export default meta;
 
-// ===== FASHION MINIMAL =====
+// ===== PROMOTIONAL SALE =====
 
-export const Minimal: StoryObj = {
-  render: () => <FashionMinimal />,
+export const PromotionalEmail: StoryObj = {
+  render: () => <PromotionalSale />,
   parameters: {
     docs: {
       description: {
-        story: 'Minimalist fashion email with clean black and white design. Features: clean typography, uppercase text, generous white space, simple navigation, and focused product presentation. Perfect for luxury brands with a minimal aesthetic.',
+        story: '🟢 Promotional email with countdown timer. Features: header with logo, countdown timer, promotional text with CTA button, and footer. Perfect for time-limited offers and sales campaigns.',
       },
     },
   },
 };
 
-// ===== FASHION MAXIMAL =====
+// ===== NEWSLETTER WITH TIPS =====
 
-export const Maximal: StoryObj = {
-  render: () => <FashionMaximal />,
+export const NewsletterWithTips: StoryObj = {
+  render: () => <NewsletterTips />,
   parameters: {
     docs: {
       description: {
-        story: 'Rich, content-heavy fashion email with multiple sections and products. Features: promotional banner, featured product, product grid, extensive benefits section, and comprehensive navigation. Perfect for product launches or seasonal collections.',
+        story: '🟢 Newsletter with numbered list tips. Features: header with logo, numbered list with step-by-step guidance, and footer with social links. Perfect for educational content and how-to guides.',
       },
     },
   },
 };
 
-// ===== FASHION LUXURY =====
+// ===== SIMPLE ANNOUNCEMENT =====
 
-export const Luxury: StoryObj = {
-  render: () => <FashionLuxury />,
+export const Announcement: StoryObj = {
+  render: () => <SimpleAnnouncement />,
   parameters: {
     docs: {
       description: {
-        story: 'Elegant luxury fashion email with sophisticated spacing and typography. Features: minimal color palette, generous padding, large letter-spacing, exclusive tone, and premium feel. Perfect for high-end fashion brands and bespoke services.',
-      },
-    },
-  },
-};
-
-// ===== FASHION SALE =====
-
-export const Sale: StoryObj = {
-  render: () => <FashionSale />,
-  parameters: {
-    docs: {
-      description: {
-        story: 'Dynamic sale email with urgency elements and bold colors. Features: attention-grabbing banners, countdown messaging, promotional colors (red, yellow), multiple CTAs, and sale pricing. Perfect for flash sales, seasonal clearances, and promotional campaigns.',
+        story: '🟢 Simple announcement email. Features: header with logo, text content with divider, and comprehensive footer with categories. Perfect for company updates and new collection announcements.',
       },
     },
   },

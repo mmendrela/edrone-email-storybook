@@ -2,10 +2,17 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Divider } from '../components/Divider';
 
 const meta: Meta<typeof Divider> = {
-  title: 'Email Components/Divider',
+  title: 'Email Components/🟢 Divider',
   component: Divider,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#f5f5f5' },
+        { name: 'white', value: '#ffffff' },
+      ],
+    },
   },
   tags: ['autodocs'],
   argTypes: {
@@ -24,57 +31,28 @@ const meta: Meta<typeof Divider> = {
 export default meta;
 type Story = StoryObj<typeof Divider>;
 
-export const Default: Story = {
+// ===== READY TO DEVELOP =====
+
+export const Solid: Story = {
+  name: '🟢 Solid',
   args: {
     borderColor: '#cccccc',
     borderWidth: '1px',
     borderStyle: 'solid',
     width: '100%',
-    padding: '20px 25px',
-    backgroundColor: '#fff',
+    padding: '20px 0',
+    backgroundColor: 'transparent',
   },
 };
 
 export const Dashed: Story = {
+  name: '🟢 Dashed',
   args: {
-    ...Default.args,
+    borderColor: '#cccccc',
+    borderWidth: '1px',
     borderStyle: 'dashed',
-  },
-};
-
-export const Dotted: Story = {
-  args: {
-    ...Default.args,
-    borderStyle: 'dotted',
-  },
-};
-
-export const Thick: Story = {
-  args: {
-    ...Default.args,
-    borderWidth: '2px',
-    borderColor: '#999999',
-  },
-};
-
-export const ColoredDivider: Story = {
-  args: {
-    ...Default.args,
-    borderColor: '#3498db',
-    borderWidth: '2px',
-  },
-};
-
-export const ShortDivider: Story = {
-  args: {
-    ...Default.args,
-    width: '50%',
-  },
-};
-
-export const WithPadding: Story = {
-  args: {
-    ...Default.args,
-    padding: '30px 25px',
+    width: '100%',
+    padding: '20px 0',
+    backgroundColor: 'transparent',
   },
 };

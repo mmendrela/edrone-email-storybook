@@ -1,11 +1,20 @@
 import React from 'react';
-import { Logo, LogoProps } from './Logo';
+
+export interface LogoProps {
+  src: string;
+  alt: string;
+  href?: string;
+  width?: number;
+  filter?: string;
+  backgroundColor?: string;
+}
 
 interface HeaderProps {
   logo?: LogoProps;
   preheaderText?: string;
   browserLinkText?: string;
   browserLinkHref?: string;
+  browserLinkColor?: string;
   backgroundColor?: string;
 }
 
@@ -14,6 +23,7 @@ export const Header: React.FC<HeaderProps> = ({
   preheaderText,
   browserLinkText = 'Zobacz w przeglądarce',
   browserLinkHref = '#',
+  browserLinkColor = '#777777',
   backgroundColor = '#ffffff',
 }) => {
   const containerStyle: React.CSSProperties = {
@@ -42,7 +52,7 @@ export const Header: React.FC<HeaderProps> = ({
 
   const browserLinkStyle: React.CSSProperties = {
     fontSize: '12px',
-    color: '#777777',
+    color: browserLinkColor,
     textDecoration: 'underline',
     paddingBottom: '10px',
     display: 'block',
@@ -67,8 +77,22 @@ export const Header: React.FC<HeaderProps> = ({
                 )}
                 {logo && (
                   <tr>
-                    <td style={{ padding: '10px 0' }}>
-                      <Logo {...logo} />
+                    <td style={{ padding: '20px 0', textAlign: 'center' }}>
+                      <a href={logo.href || '#'} target="_blank" rel="noopener noreferrer">
+                        <img
+                          src={logo.src}
+                          alt={logo.alt}
+                          width={logo.width || 60}
+                          style={{
+                            border: 0,
+                            display: 'block',
+                            margin: '0 auto',
+                            height: 'auto',
+                            maxWidth: '100%',
+                            filter: logo.filter || undefined,
+                          }}
+                        />
+                      </a>
                     </td>
                   </tr>
                 )}

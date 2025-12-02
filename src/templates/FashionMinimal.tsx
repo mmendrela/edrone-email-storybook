@@ -1,6 +1,5 @@
 import React from 'react';
 import { Banner } from '../components/Banner';
-import { Logo } from '../components/Logo';
 import { Categories } from '../components/Categories';
 import { Hero } from '../components/Hero';
 import { ProductGrid } from '../components/ProductGrid';

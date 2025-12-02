@@ -2,10 +2,18 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { NumberedList } from '../components/NumberedList';
 
 const meta: Meta<typeof NumberedList> = {
-  title: 'Email Components/NumberedList',
+  title: 'Email Components/🟢 NumberedList',
   component: NumberedList,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#f5f5f5' },
+        { name: 'white', value: '#ffffff' },
+        { name: 'dark', value: '#000000' },
+      ],
+    },
   },
   tags: ['autodocs'],
   argTypes: {
@@ -15,28 +23,18 @@ const meta: Meta<typeof NumberedList> = {
     titleColor: { control: 'color' },
     descriptionColor: { control: 'color' },
     padding: { control: 'text' },
+    numberSize: { control: 'text' },
+    numberFontSize: { control: 'text' },
+    numberFontWeight: { control: 'number' },
+    numberBorderRadius: { control: 'text' },
+    numberBorder: { control: 'text' },
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof NumberedList>;
 
-const exerciseItems = [
-  {
-    title: 'Rozciąganie karku',
-    description: 'Pochyl głowę w bok, trzymaj 20–30 sekund, powtórz na drugą stronę.',
-  },
-  {
-    title: 'Krążenia ramion',
-    description: 'Wykonaj 10 powolnych krążeń w przód i 10 w tył, aby rozluźnić barki.',
-  },
-  {
-    title: 'Rozciąganie łydek',
-    description: 'Postaw jedną stopę do przodu, zegnij kolano i przytrzymaj przez 20–30 sekund.',
-  },
-];
-
-const stepsItems = [
+const defaultItems = [
   {
     title: 'Zarejestruj się',
     description: 'Stwórz konto w kilka minut i zyskaj dostęp do wszystkich funkcji.',
@@ -51,83 +49,95 @@ const stepsItems = [
   },
 ];
 
-const tipsItems = [
-  {
-    title: 'Pij regularnie wodę',
-    description: 'Nawodnienie organizmu jest kluczowe dla zdrowia.',
-  },
-  {
-    title: 'Jedz więcej warzyw',
-    description: 'Warzywa dostarczają niezbędnych witamin i minerałów.',
-  },
-  {
-    title: 'Regularny sen',
-    description: 'Wyśpij się 7-8 godzin każdej nocy dla lepszego samopoczucia.',
-  },
-  {
-    title: 'Aktywność fizyczna',
-    description: 'Minimum 30 minut ruchu dziennie poprawia zdrowie.',
-  },
-  {
-    title: 'Redukcja stresu',
-    description: 'Znajdź czas na relaks i techniki zarządzania stresem.',
-  },
-];
+// ===== READY TO DEVELOP =====
 
-export const ExerciseList: Story = {
+export const LightBackground: Story = {
+  name: '🟢 Light Background',
   args: {
-    items: exerciseItems,
-    backgroundColor: '#f9f9fb',
-    numberBackgroundColor: '#ffd403',
-    numberTextColor: '#ffffff',
-  },
-};
-
-export const StepsList: Story = {
-  args: {
-    items: stepsItems,
-    backgroundColor: '#f9f9fb',
+    items: defaultItems,
+    backgroundColor: '#ffffff',
     numberBackgroundColor: '#3498db',
     numberTextColor: '#ffffff',
+    titleColor: '#000000',
+    descriptionColor: '#666666',
+    padding: '24px',
   },
 };
 
-export const TipsList: Story = {
+export const DarkBackground: Story = {
+  name: '🟢 Dark Background',
   args: {
-    items: tipsItems,
+    items: defaultItems,
+    backgroundColor: '#000000',
+    numberBackgroundColor: '#3498db',
+    numberTextColor: '#ffffff',
+    titleColor: '#ffffff',
+    descriptionColor: '#cccccc',
+    padding: '24px',
+  },
+};
+
+export const ColoredBackground: Story = {
+  name: '🟢 Colored Background',
+  args: {
+    items: defaultItems,
+    backgroundColor: '#3498db',
+    numberBackgroundColor: '#ffffff',
+    numberTextColor: '#3498db',
+    titleColor: '#ffffff',
+    descriptionColor: '#f0f8ff',
+    padding: '24px',
+  },
+};
+
+export const SquareBadges: Story = {
+  name: '🟢 Square Badges',
+  args: {
+    items: defaultItems,
     backgroundColor: '#ffffff',
-    numberBackgroundColor: '#6AA306',
-    numberTextColor: '#121212',
+    numberBackgroundColor: '#000000',
+    numberTextColor: '#ffffff',
+    titleColor: '#000000',
+    descriptionColor: '#666666',
+    padding: '24px',
+    numberBorderRadius: '4px',
+    numberSize: '32px',
+    numberFontSize: '16px',
+    numberFontWeight: 700,
   },
 };
 
-export const CustomColors: Story = {
+export const OutlineCircles: Story = {
+  name: '🟢 Outline Circles',
   args: {
-    items: exerciseItems,
-    backgroundColor: '#e8f5e9',
-    numberBackgroundColor: '#4caf50',
-    numberTextColor: '#ffffff',
-    titleColor: '#1b5e20',
-    descriptionColor: '#2e7d32',
+    items: defaultItems,
+    backgroundColor: '#ffffff',
+    numberBackgroundColor: 'transparent',
+    numberTextColor: '#3498db',
+    titleColor: '#000000',
+    descriptionColor: '#666666',
+    padding: '24px',
+    numberSize: '36px',
+    numberFontSize: '16px',
+    numberFontWeight: 600,
+    numberBorderRadius: '9999px',
+    numberBorder: '2px solid #3498db',
   },
 };
 
-export const CompactPadding: Story = {
+export const RoundedMinimal: Story = {
+  name: '🟢 Rounded Minimal',
   args: {
-    items: stepsItems,
-    backgroundColor: '#f9f9fb',
-    numberBackgroundColor: '#ff5722',
-    numberTextColor: '#ffffff',
-    padding: '16px',
-  },
-};
-
-export const LargePadding: Story = {
-  args: {
-    items: tipsItems,
-    backgroundColor: '#fff3e0',
-    numberBackgroundColor: '#ff9800',
-    numberTextColor: '#ffffff',
-    padding: '32px',
+    items: defaultItems,
+    backgroundColor: '#ffffff',
+    numberBackgroundColor: '#f0f0f0',
+    numberTextColor: '#000000',
+    titleColor: '#000000',
+    descriptionColor: '#666666',
+    padding: '24px',
+    numberSize: '28px',
+    numberFontSize: '14px',
+    numberFontWeight: 600,
+    numberBorderRadius: '8px',
   },
 };

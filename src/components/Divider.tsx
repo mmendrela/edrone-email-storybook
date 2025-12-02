@@ -14,50 +14,54 @@ export const Divider: React.FC<DividerProps> = ({
   borderWidth = '1px',
   borderStyle = 'solid',
   width = '100%',
-  padding = '20px 25px',
-  backgroundColor = '#fff',
+  padding = '20px 0',
+  backgroundColor = 'transparent',
 }) => {
-  const containerStyle: React.CSSProperties = {
-    margin: '0px auto',
-    maxWidth: '600px',
-    backgroundColor,
-  };
-
-  const dividerStyle: React.CSSProperties = {
-    borderTop: `${borderWidth} ${borderStyle} ${borderColor}`,
-    fontSize: '1px',
-    margin: '0px auto',
-    width,
-  };
-
   return (
-    <div style={containerStyle}>
-      <table border={0} cellPadding={0} cellSpacing={0} role="presentation" style={{ width: '100%' }}>
-        <tbody>
-          <tr>
-            <td style={{ direction: 'ltr', fontSize: '0px', padding: '0', textAlign: 'center' }}>
-              <div style={{
-                fontSize: '0px',
-                textAlign: 'left',
-                direction: 'ltr',
-                display: 'inline-block',
-                verticalAlign: 'top',
-                width: '100%'
-              }}>
-                <table border={0} cellPadding={0} cellSpacing={0} role="presentation" width="100%">
-                  <tbody>
-                    <tr>
-                      <td style={{ fontSize: '0px', padding, wordBreak: 'break-word' }}>
-                        <p style={dividerStyle} />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <table
+      border={0}
+      cellPadding={0}
+      cellSpacing={0}
+      role="presentation"
+      style={{
+        width: '100%',
+        maxWidth: '600px',
+        margin: '0 auto',
+        backgroundColor,
+      }}
+    >
+      <tbody>
+        <tr>
+          <td style={{ padding }}>
+            <table
+              border={0}
+              cellPadding={0}
+              cellSpacing={0}
+              role="presentation"
+              style={{
+                width: '100%',
+                margin: '0 auto',
+              }}
+            >
+              <tbody>
+                <tr>
+                  <td
+                    style={{
+                      borderTop: `${borderWidth} ${borderStyle} ${borderColor}`,
+                      fontSize: '0',
+                      lineHeight: '0',
+                      width,
+                      margin: '0 auto',
+                    }}
+                  >
+                    &nbsp;
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   );
 };
